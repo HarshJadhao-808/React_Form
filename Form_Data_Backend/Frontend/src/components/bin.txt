@@ -1,0 +1,39 @@
+<form
+				class=" flex flex-col items-center justify-centerw-full h-screen sm:w-[1535px] sm:h-[600px] bg-[linear-gradient(247.34deg,#A1B4FF_1.1%,#FFFFFF_99.7%)]"
+				onSubmit={signFun}
+			>
+				
+			
+				<br />
+				<div class="bg-[#0142E1] flex justify-end rounded-[50px] h-[71px]">
+					<div className="inputholder_div">
+						<div className="input_image_div">
+							<img src="../../src/assets/email.svg" alt="" />
+						</div>
+						<input
+							class="border-none bg-[#F7F7F7] outline-none  w-[70%] h-[60px] text-[16px]"
+							type="email"
+							onChange={handlechange}
+							name="email"
+							
+						/>
+					</div>
+				</div>
+				<br />
+				<div class="bg-[#0142E1] flex justify-end rounded-[50px] h-[71px]">
+					<div class="w-[97.6%] bg-[#F7F7F7] rounded-[50px] flex items-center justify-evenly">
+						<div className="input_image_div">
+							<img src="../../src/assets/password.svg" alt="" />
+						</div>
+						<input
+							class="border-none bg-[#F7F7F7] outline-none  w-[70%] h-[60px] text-[16px]"
+							type="password"
+							onChange={handlechange}
+							name="password"
+							
+						/>
+					</div>
+				</div>
+				<br /> <br /> <br />
+			
+			</form>

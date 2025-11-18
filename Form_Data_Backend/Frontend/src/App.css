@@ -1,0 +1,53 @@
+@import "tailwindcss";
+/* *{
+    margin: 0px;
+    padding: 0px;
+} */
+nav{
+
+    
+}
+
+.authbuttons{
+    /* border: 3px solid red; */
+   
+
+}
+
+.form_tabs{
+    border: 2px solid #386BAC;
+}
+
+
+.auth_page{
+   
+}
+
+.signupinputs{
+
+}
+
+.signupform{
+  
+} 
+
+.colored_box_input{
+   
+    
+}
+
+.inputholder_div{
+   
+}
+.input_image_div>img{
+   width: 33px;
+}
+
+.signupinputs_submit{
+    
+}
+.loginform{
+  
+}
+
+
