@@ -17,7 +17,7 @@ const Signup = () => {
 		event.preventDefault();
 		try {
 			const response = await axios.post(
-				"http://localhost:8000/user/signup",
+				"http://react-form-zwyl.onrender.com/user/signup",
 				Userdata
 			);
 			console.log("Signup Successfull", response.data);
