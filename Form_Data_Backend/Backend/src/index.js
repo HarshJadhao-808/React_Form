@@ -14,7 +14,7 @@ connectDb(process.env.Mongo_Url);
 app.use("/user",UserRouter)
 
 
-app.get("/data", (req,res)=>{
+app.get("/", (req,res)=>{
     res.send("hello")
 })
 

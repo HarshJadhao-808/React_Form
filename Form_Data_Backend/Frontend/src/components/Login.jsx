@@ -9,7 +9,7 @@ const Login = () => {
   const logFun = async() => {
       event.preventDefault()
           try {
-        const response = await axios.post("http://react-form-zwyl.onrender.com/user/login", user);
+        const response = await axios.post("http://localhost:8000/user/login", user);
         console.log("Signup Successfull", response.data)
         Swal.fire({
 					text: "Login Successfull !",
@@ -30,9 +30,9 @@ const Login = () => {
   return (
 		<form
 			onSubmit={logFun}
-			className="flex  sm:items-center justify-center  w-full h-[596px] sm:w-full sm:h-[542px] opacity-100  bg-[linear-gradient(247.34deg,#A1B4FF_1.1%,#FFFFFF_99.7%)]"
+			className="flex  sm:items-center justify-center  w-full h-[596px] sm:w-full sm:h-max-screen sm:h-[542px] opacity-100  bg-[linear-gradient(247.34deg,#A1B4FF_1.1%,#FFFFFF_99.7%)]"
 		>
-			<div className="bg-[#FFFFFF] rounded-[30px] mt-20 sm:mt-0  mb-50 sm:mb-0 w-[80%] h-[65%] sm:h-[85%] sm:w-[517px] flex flex-col gap-1 sm:gap-3">
+			<div className="bg-[#FFFFFF] rounded-[30px] mt-20 sm:mt-0  mb-50 sm:mb-0 w-[80%] h-[65%] sm:h-[80%] sm:w-[517px] flex flex-col gap-1 sm:gap-3">
 				<h1 className="text-center mt-5 sm:mt-7 text-[24px] sm:text-[37.83px] font-[500] sm:font-[700] font-[Halant] mb-2 sm:mb-2 ">
 					Log In
 				</h1>
@@ -74,10 +74,10 @@ const Login = () => {
 				</div>
 				<div className="flex justify-between text-[10px] sm:text-[14px] w-[80%] m-auto">
 					<div className="flex">
-						<input type="radio" className="bg-[#DFDFDF] mx-2"/>
+						<input type="radio" className="bg-[#DFDFDF] mx-2" />
 						<p>Remember Me</p>
 					</div>
-					<div>Forget Password</div>
+					<div className="text-[#939393]">Forget Password</div>
 				</div>
 				<div className=" flex justify-center">
 					<input

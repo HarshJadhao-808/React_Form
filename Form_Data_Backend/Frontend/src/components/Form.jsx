@@ -17,20 +17,19 @@ const Form = () => {
   ]
   return (
 		<div>
-			<div class=" mt-3 mx-4 h-20 border-2 border-[#386BAC] sm:mx-7 sm:h-25 sm:mt-7 flex justify-center items-center">
-				
-        {/* Professional */}
-        
-        {/* tab */}
-				<div class=" w-15 h-full flex flex-col items-center sm:w-15 sm:mx-3 ml-3 sm:ml-17">
-					<div class="mt-1 sm:mt-3">
+			<div class=" mt-3 mx-4 h-20 border-2 border-[#386BAC] sm:mx-7 sm:h-25 sm:mt-7 flex justify-center items-center overflow-x-auto sm:overflow-x-visible">
+				{/* Professional */}
+
+				{/* tab */}
+				<div class=" w-15 h-full flex flex-col items-center sm:w-12 sm:mx-3 ml-10  sm:ml-10">
+					<div class="border- w-9 h-[80px] sm:h-[55%] mt-1 sm:mt-3">
 						<img
-							class="w-[45px] mt-2 sm:mt-1 sm:w-[48px]"
+							class=" mt-2 sm:mt-1 "
 							src="../../src/assets/personal_info.svg"
 							alt=""
 						/>
 					</div>
-					<p class="text-center text-[8px] sm:text-[17px] mt-2 sm:mt-2  whitespace-nowrap">
+					<p class="text-center text-[10px] sm:text-[12px] mt-2 sm:mt-2 mb-1 sm:mb-0 whitespace-nowrap">
 						Personal Information
 					</p>
 				</div>
@@ -40,33 +39,33 @@ const Form = () => {
 				{/* Educational tab */}
 
 				{/* tab */}
-				<div class=" w-15 h-full flex flex-col items-center sm:w-15 sm:mx-3 ml-3 sm:ml-17">
-					<div class="mt-1 sm:mt-3">
+				<div class=" w-15 h-full flex flex-col items-center sm:w-12 sm:mx-3  ">
+					<div class="border- w-9 h-[80px] mt-1 sm:mt-3">
 						<img
-							class="w-[45px] mt-2 sm:mt-1 sm:w-[48px]"
+							class=" mt-2 sm:mt-1 "
 							src="../../src/assets/educational_info.svg"
 							alt=""
 						/>
 					</div>
-					<p class="text-center text-[8px] sm:text-[17px] mt-2 sm:mt-2  whitespace-nowrap">
+					<p class="text-center text-[10px] sm:text-[12px] mt-2 sm:mt-2 mb-1 sm:mb-0 whitespace-nowrap">
 						Education Information
 					</p>
 				</div>
 				{/* bar */}
 				<div class="sm:h-[2px] border-1 w-[50px] sm:w-[147px] rounded-[1px] mb-1"></div>
-				
-        {/* Professional */}
-        
-        {/* tab */}
-				<div class=" w-15 h-full flex flex-col items-center sm:w-15 sm:mx-3 ml-3 sm:ml-17">
-					<div class="mt-1 sm:mt-3">
+
+				{/* Professional */}
+
+				{/* tab */}
+				<div class=" w-15 h-full flex flex-col items-center sm:w-12 sm:mx-3  ">
+					<div class="border- w-9 h-[80px] mt-1 sm:mt-3">
 						<img
-							class="w-[45px] mt-2 sm:mt-1 sm:w-[48px]"
+							class=" mt-2 sm:mt-1 "
 							src="../../src/assets/professional_info.svg"
 							alt=""
 						/>
 					</div>
-					<p class="text-center text-[8px] sm:text-[17px] mt-2 sm:mt-2  whitespace-nowrap">
+					<p class="text-center text-[10px] sm:text-[12px] mt-2 sm:mt-2 mb-1 sm:mb-0 whitespace-nowrap">
 						Professional Information
 					</p>
 				</div>
@@ -76,33 +75,33 @@ const Form = () => {
 				{/* Identity */}
 
 				{/* tab */}
-				<div class=" w-15 h-full flex flex-col items-center sm:w-15 sm:mx-3 ml-3 sm:ml-17">
-					<div class="mt-1 sm:mt-3">
+				<div class=" w-15 h-full flex flex-col items-center sm:w-12 sm:mx-3  ">
+					<div class="border- w-9 h-[80px] mt-1 sm:mt-3">
 						<img
-							class="w-[45px] mt-2 sm:mt-1 sm:w-[48px]"
+							class=" mt-2 sm:mt-1 "
 							src="../../src/assets/Identiacal_info.svg"
 							alt=""
 						/>
 					</div>
-					<p class="text-center text-[8px] sm:text-[17px] mt-2 sm:mt-2  whitespace-nowrap">
+					<p class="text-center text-[10px] sm:text-[12px] mt-2 sm:mt-2 mb-1 sm:mb-0 whitespace-nowrap">
 						Identity & Documents
 					</p>
 				</div>
 				{/* bar */}
 				<div class="sm:h-[2px] border-1 w-[50px] sm:w-[147px] rounded-[1px] mb-1"></div>
 
-        {/* Additional  */}
+				{/* Additional  */}
 
 				{/* tab */}
-				<div class=" w-15 h-full flex flex-col items-center sm:w-15 sm:mx-3 ml-3 sm:ml-17">
-					<div class="mt-1 sm:mt-3">
+				<div class=" w-15 h-full flex flex-col items-center sm:w-12 sm:mx-3  sm:mr-11 ">
+					<div class="border- w-9 h-[80px] mt-1 sm:mt-3">
 						<img
-							class="w-[45px] mt-2 sm:mt-1 sm:w-[48px]"
+							class=" mt-2 sm:mt-1 "
 							src="../../src/assets/Additional_info.svg"
 							alt=""
 						/>
 					</div>
-					<p class="text-center text-[8px] sm:text-[17px] mt-2 sm:mt-2  whitespace-nowrap">
+					<p class="text-center text-[10px] sm:text-[12px] mt-2 sm:mt-2 mb-1 sm:mb-0 whitespace-nowrap">
 						Additional Information
 					</p>
 				</div>
