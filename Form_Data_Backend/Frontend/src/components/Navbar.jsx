@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
-		<nav class="flex justify-between px-2 mb-2 mx-4 my-2 sm:my-5 sm:mx-7 my:1 sm border-2 border-[#386BAC] sm:h-15 sm:py-2 sm:px-3">
+		<nav class="flex justify-between px-2 mb-2 mx-4 my-2 sm:my-5 sm:mx-7 my:1 border-2 border-[#386BAC] sm:h-15 sm:py-2 sm:px-3">
 			<div>
 				<Link to="/">
 					<div class="flex align-middle  h-[100%] ">
