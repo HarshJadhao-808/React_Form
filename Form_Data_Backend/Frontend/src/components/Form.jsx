@@ -106,13 +106,13 @@ const Form = () => {
 				</div>
 			</div>
 			{page == 0 ? (
-				<div className="border-2 sm:border-none sm:py-2 border-[#000000] mx-4 h-[35px] my-2 sm:my-8 m-auto ">
-					<div className="sm:-my-20">
-						<div className="flex align-center justify-center my-[4px]">
+				<div className="border-2 sm:border-none sm:py-2 border-[#000000] mx-4 sm:h-30 sm:mx-4 h-[35px] my-2 sm:my-3 m-auto ">
+					<div className="sm:my-2">
+						<div className="flex align-center justify-center sm:my-0 my-[4px]">
 							<div className="border- w-[24px] sm:w-20">
-								<img className='w-[23px]' src="../../src/assets/personal_{user}.svg" alt="" />
+								<img className='w-[23px] sm:w-[72px]' src="../../src/assets/personal_{user}.svg" alt="" />
 							</div>
-							<h1 className="text-[14px] s m:text-[36px] font-normal sm:font-semibold ">
+							<h1 className="text-[14px] sm:text-[36px] font-normal sm:font-semibold ">
 								Personal Information
 							</h1>
 						</div>
