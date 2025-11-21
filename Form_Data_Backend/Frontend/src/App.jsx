@@ -21,7 +21,11 @@ function App() {
 			<Router>
 				<Navbar />
 				<Routes>
-					<Route path="/" element={<Form />}></Route>
+					<Route path="/form/personal_info" element={<Form />}></Route>
+					<Route path="/form/educational_info" element={<Form />}></Route>
+					<Route path="/form/professional_info" element={<Form />}></Route>
+					<Route path="/form/identity_info" element={<Form />}></Route>
+					<Route path="/form/review" element={<Form />}></Route>
 					<Route path="/login" element={<Login />}></Route>
 					<Route path="/signup" element={<Signup />}></Route>
 				</Routes>
