@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import user from "../assets/user.svg" 
 
 const Signup = () => {
 	const [Userdata, setUserdata] = useState({
@@ -47,7 +48,7 @@ const Signup = () => {
 					<div className="w-[98%]  flex justify-center align-center bg-[#F7F7F7] rounded-[50px]">
 						<div className=" flex align-center  ml-3">
 							<img
-								src="../../src/assets/user.svg"
+								src={user}
 								className="w-5 sm:ml-3 sm:w-6"
 								alt=""
 							/>
