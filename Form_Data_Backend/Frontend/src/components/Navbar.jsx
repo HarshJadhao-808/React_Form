@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import home from "/src/assets/home.svg";
 const Navbar = () => {
   return (
-		<nav className="flex justify-between px-2 mb-2 mx-4 my-2 sm:my-5 sm:mx-7 my:1 border-2 border-[#386BAC] sm:h-15 sm:py-2 sm:px-3">
+		<nav className="flex justify-between px-2 mb-2 mx-4 my-2 sm:my-5 sm:mx-7 my:1 border-2 border-[#386BAC] w-[95%] sm:h-15 sm:py-2 sm:px-3">
 			<div>
 				<Link to="/form/personal_info">
 					<div className="flex align-middle  h-[100%] ">

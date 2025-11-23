@@ -20,16 +20,16 @@ const Form = () => {
      
   return (
 		<div>
-			<div className=" mt-3 mx-4 h-20 border-2 border-[#386BAC] sm:mx-7 sm:h-25 sm:mt-7 flex justify-center items-center  overflow-x-auto sm:overflow-x-visible px-3 sm:px-0">
+			<div className=" mt-3 mx-4 h-20 border-2 border-[#386BAC] sm:mx-7 sm:h-25 w-[95%] sm:mt-7 flex justify-center items-center  overflow-x-auto sm:overflow-x-visible px-2 sm:px-0">
 				{/* Personal */}
 				{/* tab */}
 				<Link to="/form/personal_info">
 					<div
-						className=" w-15 h-full flex flex-col items-center sm:w-12 sm:mx-3 sm:ml-10 "
+						className=" w-9 h-full flex flex-col items-center sm:w-12 sm:mx-3 sm:ml-10 "
 					>
-						<div className="border- sm:w-15 w-8 h-[80px] sm:h-[55px] mt-1 sm:mt-3 flex">
+						<div className="border- w-6 sm:w-15 w-7 h-[80px] sm:h-[55px] mt-1 sm:mt-3 flex">
 							<img
-								className=" mt-2 sm:mt-1 "
+								className=" mt-0 sm:mt-1 "
 								src={personal_info}
 								alt=""
 							/>
@@ -40,18 +40,18 @@ const Form = () => {
 					</div>
 				</Link>
 				{/* bar */}
-				<div className="sm:h-[2px] mt-4 sm:mt-0 border-1 w-[50px] sm:w-[147px] rounded-[1px] mb-1"></div>
+				<div className="sm:h-[2px] mt-2 sm:mt-0 border-1 w-18 sm:w-[147px] rounded-[1px] mb-1"></div>
 
 				{/* Educational tab */}
 
 				{/* tab */}
 				<Link to="/form/educational_info">
 					<div
-						className=" w-15 h-full flex flex-col items-center sm:w-12 sm:mx-3 "
+						className=" w-9 h-full flex flex-col items-center sm:w-12 sm:mx-3 "
 					>
-						<div className="border- sm:w-15 w-8 h-[80px] sm:h-[55px] mt-1 sm:mt-3 flex">
+						<div className="border- w-6 sm:w-15 w-7 h-[80px] sm:h-[55px] mt-1 sm:mt-3 flex">
 							<img
-								className=" mt-2 sm:mt-1 "
+								className=" mt-0 sm:mt-1 "
 								src={educational_info}
 								alt=""
 							/>
@@ -62,18 +62,18 @@ const Form = () => {
 					</div>
 				</Link>
 				{/* bar */}
-				<div className="sm:h-[2px] mt-4 sm:mt-0 border-1 w-[50px] sm:w-[147px] rounded-[1px] mb-1"></div>
+				<div className="sm:h-[2px] mt-2 sm:mt-0 border-1 w-18 sm:w-[147px] rounded-[1px] mb-1"></div>
 
 				{/* Professional */}
 
 				{/* tab */}
 				<Link to="/form/professional_info">
 					<div
-						className=" w-15 h-full flex flex-col items-center sm:w-12 sm:mx-3  "
+						className=" w-9 h-full flex flex-col items-center sm:w-12 sm:mx-3  "
 					>
-						<div className="border- sm:w-15 w-8 h-[80px] sm:h-[55px] mt-1 sm:mt-3 flex">
+						<div className="border- w-6 sm:w-15 w-7 h-[80px] sm:h-[55px] mt-1 sm:mt-3 flex">
 							<img
-								className=" mt-2 sm:mt-1 "
+								className=" mt-0 sm:mt-1 "
 								src={professional_info}
 								alt=""
 							/>
@@ -84,18 +84,18 @@ const Form = () => {
 					</div>
 				</Link>
 				{/* bar */}
-				<div className="sm:h-[2px] mt-4 sm:mt-0 border-1 w-[50px] sm:w-[147px] rounded-[1px] mb-1"></div>
+				<div className="sm:h-[2px] mt-2 sm:mt-0 border-1 w-18 sm:w-[147px] rounded-[1px] mb-1"></div>
 
 				{/* Identity */}
 
 				{/* tab */}
 				<Link to="/form/identity_info">
 					<div
-						className=" w-15 h-full flex flex-col items-center sm:w-12 sm:mx-3  "
+						className=" w-9 h-full flex flex-col items-center sm:w-12 sm:mx-3  "
 					>
-						<div className="border- sm:w-15 w-8 h-[80px] sm:h-[55px] mt-1 sm:mt-3 flex">
+						<div className="border- w-6 sm:w-15 w-7 h-[80px] sm:h-[55px] mt-1 sm:mt-3 flex">
 							<img
-								className=" mt-2 sm:mt-1 "
+								className=" mt-0 sm:mt-1 "
 								src={Identical_info}
 								alt=""
 							/>
@@ -106,7 +106,7 @@ const Form = () => {
 					</div>
 				</Link>
 				{/* bar */}
-				<div className="sm:h-[2px] mt-4 sm:mt-0 border-1 w-[50px] sm:w-[147px] rounded-[1px] mb-1"></div>
+				<div className="sm:h-[2px] mt-2 sm:mt-0 border-1 w-18 sm:w-[147px] rounded-[1px] mb-1"></div>
 
 				{/* Additional  */}
 
@@ -114,11 +114,11 @@ const Form = () => {
 				<Link to="/form/review">
 
 				<div
-					className=" w-15 h-full flex flex-col items-center sm:w-12 sm:mx-3  sm:mr-11 "
+					className=" w-9 h-full flex flex-col items-center sm:w-12 sm:mx-3  sm:mr-11 "
 				>
-					<div className="border- sm:w-15 w-8 h-[80px] sm:h-[55px] mt-1 sm:mt-3 flex">
+					<div className="border- w-6 sm:w-15 w-7 h-[80px] sm:h-[55px] mt-1 sm:mt-3 flex">
 						<img
-							className=" mt-2 sm:mt-1 "
+							className=" mt-0 sm:mt-1 "
 							src={Additional_info}
 							alt=""
 						/>
@@ -129,7 +129,6 @@ const Form = () => {
 				</div>
 				</Link>
 			</div>
-			{/* {page_no[page]} */}
 		</div>
 	);
 }

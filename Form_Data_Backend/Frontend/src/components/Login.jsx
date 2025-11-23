@@ -84,7 +84,7 @@ const Login = () => {
 				<div className=" flex justify-center">
 					<input
 						className=" mt-10 mb-10 sm:mt-12 sm:mb-12  bg-[#0242E1] w-[80%] h-[50px] sm:h-[66px] rounded-[50px] sm:text-[30.83px] text-white font-[halant]  "
-						value="Signup"
+						value="Login"
 						type="submit"
 					/>
 				</div>
