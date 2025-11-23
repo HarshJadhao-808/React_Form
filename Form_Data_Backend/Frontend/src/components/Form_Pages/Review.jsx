@@ -1,5 +1,6 @@
 import React from 'react'
 import Form from "../Form";
+import Additional_info from "../../assets/Additional_info.svg";
 
 
 const Review = () => {
@@ -13,7 +14,7 @@ const Review = () => {
 						<div className="border- w-[24px] sm:w-20">
 							<img
 								className="w-[23px] sm:w-[52px]"
-								src="../../src/assets/Additional_info.svg"
+								src={Additional_info}
 								alt=""
 							/>
 						</div>

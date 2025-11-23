@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import email from "../assets/email.svg";
+import password from "../assets/password.svg";
 const Login = () => {
    const [user,setUser] = useState({
     email:"",
@@ -40,7 +42,7 @@ const Login = () => {
 					<div className="w-[98%] flex justify-center align-center bg-[#F7F7F7] rounded-[50px]">
 						<div className=" flex align-center  ml-3">
 							<img
-								src="../../src/assets/email.svg"
+								src={email}
 								className="w-5 sm:ml-3 sm:w-6"
 								alt=""
 							/>
@@ -58,7 +60,7 @@ const Login = () => {
 					<div className="w-[98%] flex justify-center align-center bg-[#F7F7F7] rounded-[50px]">
 						<div className=" flex align-center  ml-3">
 							<img
-								src="../../src/assets/password.svg"
+								src={password}
 								className="w-5 sm:ml-3 sm:w-6"
 								alt=""
 							/>

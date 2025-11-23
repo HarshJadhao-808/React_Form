@@ -1,5 +1,6 @@
 import React from 'react'
 import Form from "../Form";
+import professional_info from "../../assets/professional_info.svg";
 
 const Professional_info = () => {
   return (
@@ -12,7 +13,7 @@ const Professional_info = () => {
 						<div className="border- w-[24px] sm:w-20">
 							<img
 								className="w-[23px] mt-[3px] sm:w-[52px]"
-								src="../../src/assets/professional_info.svg"
+								src={professional_info}
 								alt=""
 							/>
 						</div>

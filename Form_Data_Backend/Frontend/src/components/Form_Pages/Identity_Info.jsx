@@ -1,5 +1,6 @@
 import React from 'react'
 import Form from "../Form";
+import identical_info from "../../assets/identical_info.svg";
 
 const Identity_Info = () => {
   return (
@@ -12,7 +13,7 @@ const Identity_Info = () => {
 						<div className="border- w-[24px] sm:w-20">
 							<img
 								className="w-[23px] sm:w-[52px]"
-								src="../../src/assets/identical_info.svg"
+								src={identical_info}
 								alt=""
 							/>
 						</div>
