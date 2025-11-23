@@ -1,6 +1,6 @@
 import React from 'react'
 import Form  from '../Form'
-import educational_info from "../../assets/educational_info.svg";
+import educational_info from "/src/assets/educational_info.svg";
 
 const Educational_Info = () => {
   return (

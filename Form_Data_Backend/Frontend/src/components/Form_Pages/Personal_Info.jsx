@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import Form from "../Form";
-import personal_user from "../../assets/personal_{user}.svg";
-import  personal_info from "../../assets/personal_info.svg"
-import  next from "../../assets/next.svg"
+import personal_user from "/src/assets/personal_{user}.svg";
+import  personal_info from "/src/assets/personal_info.svg"
+import  next from "/src/assets/next.svg"
 const Personal_Info = (props) => {
  const[Gender,setGender] = useState(false)
   return (

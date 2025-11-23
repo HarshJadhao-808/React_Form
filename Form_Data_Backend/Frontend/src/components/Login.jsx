@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import email from "../assets/email.svg";
-import password from "../assets/password.svg";
+import email from "/src/assets/email.svg";
+import password from "/src/assets/password.svg";
 const Login = () => {
    const [user,setUser] = useState({
     email:"",

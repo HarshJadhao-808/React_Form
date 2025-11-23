@@ -7,11 +7,11 @@ import Identity_Info from './Form_Pages/Identity_Info.jsx'
 import Review from './Form_Pages/Review.jsx'
 import { useNavigate } from 'react-router-dom'
 import { Link } from "react-router-dom";
-import personal_info from "../assets/personal_info.svg";
-import educational_info from "../assets/educational_info.svg";
-import professional_info from "../assets/professional_info.svg";
-import Identical_info from "../assets/Identical_info.svg";
-import Additional_info from "../assets/Additional_info.svg";
+import personal_info from "/src/assets/personal_info.svg";
+import educational_info from "/src/assets/educational_info.svg";
+import professional_info from "/src/assets/professional_info.svg";
+import Identical_info from "/src/assets/Identical_info.svg";
+import Additional_info from "/src/assets/Additional_info.svg";
 
 const Form = () => {
   const [page,setPage] = useState(0)

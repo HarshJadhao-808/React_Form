@@ -1,6 +1,6 @@
 import React from 'react'
 import Form from "../Form";
-import Additional_info from "../../assets/Additional_info.svg";
+import Additional_info from "/src/assets/Additional_info.svg";
 
 
 const Review = () => {

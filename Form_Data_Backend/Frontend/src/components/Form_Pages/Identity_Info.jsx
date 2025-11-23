@@ -1,6 +1,6 @@
 import React from 'react'
 import Form from "../Form";
-import identical_info from "../../assets/identical_info.svg";
+import identical_info from "/src/assets/identical_info.svg";
 
 const Identity_Info = () => {
   return (
