@@ -40,7 +40,7 @@ const Form = () => {
 					</div>
 				</Link>
 				{/* bar */}
-				<div className="sm:h-[2px] mt-2 sm:mt-0 border-1 w-18 sm:w-[147px] rounded-[1px] mb-1"></div>
+				<div className="sm:h-[1px] mt-2 sm:mt-0 border-1 w-18 sm:w-[147px] rounded-[1px] mb-1"></div>
 
 				{/* Educational tab */}
 
@@ -62,7 +62,7 @@ const Form = () => {
 					</div>
 				</Link>
 				{/* bar */}
-				<div className="sm:h-[2px] mt-2 sm:mt-0 border-1 w-18 sm:w-[147px] rounded-[1px] mb-1"></div>
+				<div className="sm:h-[1px] mt-2 sm:mt-0 border-1 w-18 sm:w-[147px] rounded-[1px] mb-1"></div>
 
 				{/* Professional */}
 
@@ -84,7 +84,7 @@ const Form = () => {
 					</div>
 				</Link>
 				{/* bar */}
-				<div className="sm:h-[2px] mt-2 sm:mt-0 border-1 w-18 sm:w-[147px] rounded-[1px] mb-1"></div>
+				<div className="sm:h-[1px] mt-2 sm:mt-0 border-1 w-18 sm:w-[147px] rounded-[1px] mb-1"></div>
 
 				{/* Identity */}
 
@@ -106,7 +106,7 @@ const Form = () => {
 					</div>
 				</Link>
 				{/* bar */}
-				<div className="sm:h-[2px] mt-2 sm:mt-0 border-1 w-18 sm:w-[147px] rounded-[1px] mb-1"></div>
+				<div className="sm:h-[1px] mt-2 sm:mt-0 border-1 w-18 sm:w-[147px] rounded-[1px] mb-1"></div>
 
 				{/* Additional  */}
 
