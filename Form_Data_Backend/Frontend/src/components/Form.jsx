@@ -20,7 +20,7 @@ const Form = () => {
      
   return (
 		<div>
-			<div className=" mt-3 mx-4 h-20 border-2 border-[#386BAC] sm:mx-7 sm:h-25 w-[95%] sm:mt-7 flex justify-center items-center  overflow-x-auto sm:overflow-x-visible px-2 sm:px-0">
+			<div className="fixed top-17 left-2 sm:top-28 sm:left-1  mt-3  h-20 border-2 border-[#386BAC] sm:mx-7 sm:h-25 w-[95%] sm:mt-7 flex justify-center items-center  overflow-x-auto sm:overflow-x-visible px-2 sm:px-0">
 				{/* Personal */}
 				{/* tab */}
 				<Link to="/form/personal_info">

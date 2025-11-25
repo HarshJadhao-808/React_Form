@@ -4,7 +4,7 @@ import home from "/src/assets/home.svg";
 
 const Navbar = () => {
 	return (
-		<nav className="  flex items-center justify-between w-full max-w-[95%] mx-auto border-2 border-[#386BAC] rounded-md px-3 py-2 sm:px-5 sm:py-3 mt-3 sm:mt-5"
+		<nav className="fixed z-3 top-1 left-2 sm:top-2 sm:left-8  flex items-center justify-between w-full max-w-[95%] mx-auto border-2 border-[#386BAC] rounded-md px-3 py-2 sm:px-5 sm:py-3 mt-3 sm:mt-5"
 		>
 			{/* Home */}
 			<Link to="/form/personal_info" className="flex items-center">
