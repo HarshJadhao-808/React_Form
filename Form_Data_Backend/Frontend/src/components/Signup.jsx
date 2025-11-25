@@ -42,7 +42,7 @@ const Signup = () => {
 					onSubmit={signFun}
 					className="static z-9 flex  sm:items-center justify-center  w-full h-[596px] sm:w-full sm:h-[540px] opacity-100 "
 				>
-					<div className="bg-[#FFFFFF] rounded-[30px] mt-20 sm:mt-0  mb-50 sm:mb-0 w-[80%] h-[65%] sm:h-[85%] sm:w-[517px] flex flex-col gap-1 sm:gap-3">
+					<div className="bg-[#FFFFFF] rounded-[30px] mt-20 sm:mt-0  mb-50 sm:mb-0 w-[90%] h-[55%] sm:h-[85%] sm:w-[517px] flex flex-col gap-3 sm:gap-3">
 						<h1 className="text-center mt-5 sm:mt-7 text-[24px] sm:text-[37.83px] font-[500] sm:font-[700] font-[Halant] mb-2 sm:mb-2 ">
 							sign Up
 						</h1>
@@ -91,7 +91,7 @@ const Signup = () => {
 
 						<div className=" flex justify-center">
 							<input
-								className=" mt-10 mb-10 sm:mt-12 sm:mb-12  bg-[#0242E1] w-[80%] h-[50px] sm:h-[66px] rounded-[50px] sm:text-[30.83px] text-white font-[halant]  "
+								className=" mt-5 mb-10 sm:mt-12 sm:mb-12  bg-[#0242E1] w-[80%] h-[40px] sm:h-[66px] rounded-[50px] sm:text-[30.83px] text-white font-[halant]  "
 								value="Signup"
 								type="submit"
 							/>
