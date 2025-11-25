@@ -1,4 +1,4 @@
-import React, { useState ,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Form from "../Form";
 import personal_user from "/src/assets/personal_{user}.svg";
@@ -6,21 +6,59 @@ import personal_info from "/src/assets/personal_info.svg";
 import next from "/src/assets/next.svg";
 
 const Personal_Info = () => {
-const [Gender, setGender] = useState(false);
-const [filled,setFilled] = useState(0)
+	const [Gender, setGender] = useState("");
+	const [filled, setFilled] = useState(0);
 
-const a = 0
+	const [userData, setuserData] = useState({
+		prfimg: "",
+		name: "",
+		email: "",
+		phone: "",
+		dob: "",
+		address: "",
+		gender:Gender
+	});
 
-useEffect(() => {
-	setTimeout(() => setFilled(a), 500);
-}, [a]);
+	const Changes = (e) => {
+     setuserData({ ...userData, [e.target.name]: e.target.value });
+	 console.log(userData)
+	};
+	
 
+	const SaveIt = () => {
+		event.preventDefault();
+		console.log(userData);
+	};
 
+	const [filledfields, setFilledfields] = useState(
+		Object.values(userData).filter((value) => value !== "").length
+	);
+
+	const [totalfields, setTotalfields] = useState(Object.keys(userData).length);
+	const progression = (filledfields / totalfields ) * 100;
+	// console.log(filledfields);
+	// console.log(totalfields);
+	console.log(progression)
+
+	useEffect(() => {
+		setuserData((prev) => ({ ...prev, gender: Gender }));
+	}, [Gender]);
+
+	useEffect(() => {
+		setFilledfields(Object.values(userData).filter((v) => v !== "").length);
+	}, [userData]);
+
+   
+	useEffect(() => {
+		setTimeout(() => setFilled(progression), 500);
+	}, [progression]);
+	
+// console.log(Gender)
 	return (
 		<>
 			<div className="fixed z-3">
-				<Form/>
-				</div>
+				<Form />
+			</div>
 			<div className="w-full top-0 sm:h-60 h-40 bg-white fixed z-1"></div>
 			{/* Heading */}
 			<div className="static mt-45 sm:mt-70 z-0">
@@ -35,14 +73,22 @@ useEffect(() => {
 				</div>
 				{/* Main Form Container */}
 				<div className="w-[95%] mx-auto mt-4 sm:mt-6 flex">
-					<form className="w-full max-w-4xl mx-auto flex flex-col gap-6">
+					<form
+						onSubmit={SaveIt}
+						className="w-full max-w-4xl mx-auto flex flex-col gap-6"
+					>
 						{/* Profile Image */}
 						<label className="border-2 border-[#193E6D] w-[75%] sm:w-[420px] mx-auto flex flex-col justify-center items-center rounded-xl py-4">
 							<img className="w-10 sm:w-16" src={personal_info} alt="" />
 							<p className="mt-3 text-[16px] sm:text-[20px] font-medium">
 								Add Your Profile Photo
 							</p>
-							<input type="file" className="hidden" accept="image/*" />
+							<input
+								name="prfimg"
+								type="file"
+								className="hidden"
+								accept="image/*"
+							/>
 						</label>
 
 						{/* Name */}
@@ -52,6 +98,8 @@ useEffect(() => {
 							</label>
 							<input
 								type="text"
+								onChange={Changes}
+								name="name"
 								className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 								placeholder="Full Name"
 							/>
@@ -64,6 +112,8 @@ useEffect(() => {
 							</label>
 							<input
 								type="email"
+								onChange={Changes}
+								name="email"
 								className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 							/>
 						</div>
@@ -75,6 +125,8 @@ useEffect(() => {
 							</label>
 							<input
 								type="text"
+								onChange={Changes}
+								name="phone"
 								className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 							/>
 						</div>
@@ -86,31 +138,56 @@ useEffect(() => {
 							</label>
 							<input
 								type="date"
+								onChange={Changes}
+								name="dob"
 								className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 							/>
 						</div>
 
 						{/* Gender */}
-						<div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+						<div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-2 items-center">
 							<label className="text-[18px] sm:text-[24px] font-medium">
 								Gender :
 							</label>
-
-							<div className="col-span-2 flex gap-6">
-								{["Male", "Female", "Others"].map((g) => (
+							<div className="border- rounded-lg py-2 px-4 w-full flex justify-between sm:justify-center sm:gap-10">
+								<div className="flex items-center gap-2   text-[16px] sm:text-[20px] sm:gap-4  ">
 									<div
-										key={g}
-										className="flex items-center gap-2 cursor-pointer"
-										onClick={() => setGender(g)}
+										className={`w-[13px] sm:w-6 h-[13px] sm:h-6 border-1 rounded-[50%] sm:rounded-[50%] md:w-5 md:h-5 md:rounded-[50%] ${
+											Gender == "Male" ? "bg-[#288EDF]" : "bg-[#FAFAFA]"
+										} `}
+										onClick={() => setGender(Gender == "Male" ? "" : "Male")}
 									>
-										<div
-											className={`w-4 h-4 sm:w-7 sm:h-6 rounded-full border-1 ${
-												Gender === g ? "bg-[#288EDF]" : "bg-[#FAFAFA]"
-											}`}
-										></div>
-										<p className="text-[16px] sm:text-[22px]">{g}</p>
 									</div>
-								))}
+									<p className="text-[16px] sm:text-[25px] md:text-[25px]">
+										Male
+									</p>
+								</div>
+								<div className="flex items-center gap-2  text-[16px] sm:text-[20px] sm:gap-4 ">
+									<div
+										className={`w-[13px] sm:w-6 h-[13px] sm:h-6 border-1 rounded-[50%] sm:rounded-[50%]  md:w-5 md:h-5 md:rounded-[50%] ${
+											Gender == "Female" ? "bg-[#288EDF]" : "bg-[#FAFAFA]"
+										} `}
+										onClick={() =>
+											setGender(Gender == "Female" ? "" : "Female")
+										}
+									></div>
+									<p className="text-[16px] sm:text-[25px] md:text-[25px]">
+										Female
+									</p>
+								</div>
+								<div className="flex items-center gap-2  text-[16px] sm:text-[20px] sm:mr-28 sm:gap-4 ">
+									<div
+										className={`w-[13px] sm:w-6 h-[13px] sm:h-6 border-1 rounded-[50%] sm:rounded-[50%] md:w-5 md:h-5 md:rounded-[50%] ${
+											Gender == "Others" ? "bg-[#288EDF]" : "bg-[#FAFAFA]"
+										} `}
+										onClick={() =>
+											setGender(Gender == "Others" ? "" : "Others")
+										}
+									></div>
+									<p className="text-[16px] sm:text-[25px] md:text-[25px]">
+										Others
+									</p>
+								</div>
 							</div>
 						</div>
 
@@ -121,6 +198,8 @@ useEffect(() => {
 							</label>
 							<input
 								type="text"
+								onChange={Changes}
+								name="address"
 								className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 							/>
 						</div>
