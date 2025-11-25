@@ -7,31 +7,28 @@ import UserRouter from "./routes/Userroutes.js";
 dotenv.config();
 const app = express();
 
+// CORS FIX
 app.use(
 	cors({
-		origin: ["http://localhost:5173", "https://fillit-one.vercel.app/"],
+		origin: "*",
 		methods: ["GET", "POST", "PUT", "DELETE"],
+		credentials: true,
 	})
 );
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// BODY PARSER FIX
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
-connectDb(process.env.MONGO_URL);
+connectDb(process.env.Mongo_Url);
+
+app.use("/user", UserRouter);
 
 app.get("/", (req, res) => {
-	res.status(200).json("Backend Running");
+	res.json("React-Form Backend");
 });
 
-app.use(
-	"/user",
-	(req, res, next) => {
-		console.log("Request:", req.method, req.url, req.body);
-		next();
-	},
-	UserRouter
-);
-
+// PORT FIX
 const Port = process.env.PORT || 5000;
 app.listen(Port, () => {
 	console.log(`Server running on port ${Port}`);
