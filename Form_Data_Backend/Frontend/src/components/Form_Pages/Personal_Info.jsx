@@ -7,7 +7,7 @@ import next from "/src/assets/next.svg";
 
 const Personal_Info = () => {
 const [Gender, setGender] = useState(false);
-const [filled,setFilled] = useState(8)
+const [filled,setFilled] = useState("12%")
 
 
 	return (
@@ -124,9 +124,9 @@ const [filled,setFilled] = useState(8)
 				</form>
 
 				{/* Next Arrow */}
-				<div className="hidden sm:flex flex-col gap- justify-around sm:fixed sm:top-66 sm:left-290">
+				<div className="hidden sm:flex flex-col gap- justify-around sm:fixed sm:top-66 sm:left-290 lg:left-[90%]">
 					<div className={`border-2 h-75 rounded-[20px] sm:flex sm:flex-col sm:justify-end ` }>
-						<div className={`border-2 rounded-[20px] w-full h-${filled} ${ filled  <= 30 ? "bg-[#BA181B]" : ""}  `}></div>
+						<div className={`border-2 rounded-[20px] w-full h-[${filled}] ${ filled  <= `40%` ? "bg-[#BA181B]" : filled <= `70%` ? "bg-[#ba5918]" :""}  `}></div>
 					</div>
 					<Link to="/form/educational_info">
 						<img className="w-10 mt-10 " src={next} alt="" />
