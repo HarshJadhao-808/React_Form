@@ -29,6 +29,7 @@ const Identity_Info = () => {
 					<div className="none sm:block sm:border-[4px] sm:h-0  sm:border-[#292D32] sm:w-[372px] sm:m-auto"></div>
 				</div>
 				{/* Form section */}
+				
 			</div>
 		</div>
 	);
