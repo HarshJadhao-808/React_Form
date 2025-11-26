@@ -20,7 +20,7 @@ const Personal_Info = () => {
 	});
 
 	const Changes = (e) => {
-     setuserData({ ...userData, [e.target.name]: e.target.value });
+     setuserData({...userData,[e.target.name]:e.target.value})
 	 console.log(userData)
 	};
 	
@@ -59,9 +59,32 @@ const Personal_Info = () => {
 			<div className="fixed z-3">
 				<Form />
 			</div>
-			<div className="w-full top-0 sm:h-60 h-40 bg-white fixed z-1"></div>
+			<div className="w-full top-0 sm:h-60 h-52 bg-white fixed z-1"></div>
+			{/* bar for phones */}
+			<div className="fixed z-3 sm:hidden border-2 w-[80%] h-5 rounded-[50px] top-45 left-[10%] ">
+				<div
+					className={`border-none rounded-l-[20px] h-full transition-[width] duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] w-[var(--w)] ${
+						filled <= 40
+							? "bg-[#BA181B]"
+							: filled <= 70
+							? "bg-orange-500"
+							: filled <= 95
+							? "bg-green-500"
+							: filled == 96
+							? "bg-green-500 rounded-t-[6px]"
+							: filled <= 98
+							? "bg-green-500 rounded-t-[10px]"
+							: filled == 99
+							? "bg-green-500 rounded-t-[15px]"
+							: filled == 100
+							? "bg-green-500 rounded-t-[20px]"
+							: ""
+					}`}
+					style={{ "--w": `${filled}%` }}
+				></div>
+			</div>
 			{/* Heading */}
-			<div className="static mt-45 sm:mt-70 z-0">
+			<div className="static mt-55 sm:mt-70 z-0">
 				<div className="w-[95%] border-2 sm:border-none mx-auto mt-3 sm:mt-6 text-center">
 					<div className="flex justify-center items-center gap-3">
 						<img className="w-6 sm:w-12" src={personal_user} alt="" />
@@ -156,8 +179,7 @@ const Personal_Info = () => {
 											Gender == "Male" ? "bg-[#288EDF]" : "bg-[#FAFAFA]"
 										} `}
 										onClick={() => setGender(Gender == "Male" ? "" : "Male")}
-									>
-									</div>
+									></div>
 									<p className="text-[16px] sm:text-[25px] md:text-[25px]">
 										Male
 									</p>
