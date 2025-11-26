@@ -63,7 +63,7 @@ const Personal_Info = () => {
 			{/* bar for phones */}
 			<div className="fixed z-3 sm:hidden border-2 w-[80%] h-5 rounded-[50px] top-45 left-[10%] ">
 				<div
-					className={`border-none rounded-l-[20px] h-full transition-[width] duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] w-[var(--w)] text-white font-bold text-[15px] flex justify-center items-center ml-3 ${
+					className={`border-none rounded-l-[20px] h-full transition-[width] duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] w-[var(--w)] text-white font-bold text-[15px] flex justify-center items-center ml-[11px] ${
 						filled <= 40
 							? "bg-[#BA181B]"
 							: filled <= 70
