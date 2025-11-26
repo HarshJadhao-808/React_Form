@@ -63,7 +63,7 @@ const Personal_Info = () => {
 			{/* bar for phones */}
 			<div className="fixed z-3 sm:hidden border-2 w-[80%] h-5 rounded-[50px] top-45 left-[10%] ">
 				<div
-					className={`border-none rounded-l-[20px] h-full transition-[width] duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] w-[var(--w)] ${
+					className={`border-none rounded-l-[20px] h-full transition-[width] duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] w-[var(--w)] text-white font-bold text-[15px] flex justify-center items-center ml-3 ${
 						filled <= 40
 							? "bg-[#BA181B]"
 							: filled <= 70
@@ -81,7 +81,7 @@ const Personal_Info = () => {
 							: ""
 					}`}
 					style={{ "--w": `${filled}%` }}
-				></div>
+				>{`${Math.floor(progression)}%`}</div>
 			</div>
 			{/* Heading */}
 			<div className="static mt-55 sm:mt-70 z-0">
@@ -235,6 +235,13 @@ const Personal_Info = () => {
 								value={"Save"}
 							/>
 						</div>
+						<Link to="/form/educational_info">
+							<img
+								className="w-10 sm:hidden ml-[95%] "
+								src={next}
+								alt=""
+							/>
+						</Link>
 					</form>
 
 					{/* Next Arrow */}
@@ -243,7 +250,7 @@ const Personal_Info = () => {
 							className={`border-2 h-[19rem] rounded-[20px] sm:flex sm:flex-col sm:flex-col-reverse `}
 						>
 							<div
-								className={`border-none rounded-b-[20px] w-full transition-[height] duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] h-[var(--h)] ${
+								className={`border-none rounded-b-[20px] w-full transition-[height] duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] h-[var(--h)] text-white font-bold text-center ${
 									filled <= 40
 										? "bg-[#BA181B]"
 										: filled <= 70
@@ -261,7 +268,7 @@ const Personal_Info = () => {
 										: ""
 								}`}
 								style={{ "--h": `${filled}%` }}
-							></div>
+							>{`${Math.floor(progression)}%`}</div>
 						</div>
 						<Link to="/form/educational_info">
 							<img className="w-10 mt-10 " src={next} alt="" />
