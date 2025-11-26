@@ -63,7 +63,7 @@ const Personal_Info = () => {
 			{/* bar for phones */}
 			<div className="fixed z-3 sm:hidden border-2 w-[80%] h-5 rounded-[50px] top-45 left-[10%] ">
 				<div
-					className={`border-none rounded-l-[20px] h-full transition-[width] duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] w-[var(--w)] text-white font-bold text-[15px] flex justify-center items-center ml-[11px] ${
+					className={`border-none rounded-l-[20px] h-full transition-[width] duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] w-[var(--w)] text-white font-bold text-[15px] flex justify-center items-center ${progression == 0 ? "hidden" : ""} ${
 						filled <= 40
 							? "bg-[#BA181B]"
 							: filled <= 70
@@ -71,13 +71,13 @@ const Personal_Info = () => {
 							: filled <= 95
 							? "bg-green-500"
 							: filled == 96
-							? "bg-green-500 rounded-t-[6px]"
+							? "bg-green-500 rounded-r-[6px]"
 							: filled <= 98
-							? "bg-green-500 rounded-t-[10px]"
+							? "bg-green-500 rounded-r-[10px]"
 							: filled == 99
-							? "bg-green-500 rounded-t-[15px]"
+							? "bg-green-500 rounded-r-[15px]"
 							: filled == 100
-							? "bg-green-500 rounded-t-[20px]"
+							? "bg-green-500 rounded-r-[20px]"
 							: ""
 					}`}
 					style={{ "--w": `${filled}%` }}
@@ -237,7 +237,7 @@ const Personal_Info = () => {
 						</div>
 						<Link to="/form/educational_info">
 							<img
-								className="w-10 sm:hidden ml-[95%] "
+								className="w-10 sm:hidden ml-[90%] "
 								src={next}
 								alt=""
 							/>
