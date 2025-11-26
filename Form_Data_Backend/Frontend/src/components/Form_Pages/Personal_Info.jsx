@@ -175,37 +175,37 @@ const Personal_Info = () => {
 							<div className="border- rounded-lg py-2 px-4 w-full flex justify-between sm:justify-center sm:gap-10">
 								<div className="flex items-center gap-2   text-[16px] sm:text-[20px] sm:gap-4  ">
 									<div
-										className={`w-[13px] sm:w-6 h-[13px] sm:h-6 border-1 rounded-[50%] sm:rounded-[50%] md:w-5 md:h-5 md:rounded-[50%] ${
-											Gender == "Male" ? "bg-[#288EDF]" : "bg-[#FAFAFA]"
+										className={`w-[13px] sm:w-6 h-[13px] sm:h-6 border-2 rounded-[50%] sm:rounded-[50%] md:w-5 md:h-5 md:rounded-[50%] flex items-center justify-center p-[1px] sm:p-1 ${
+											Gender == "Male" ? "border-[#288EDF]" : "border-[#000000]"
 										} `}
 										onClick={() => setGender(Gender == "Male" ? "" : "Male")}
-									></div>
+									> <div className={`${ Gender == "Male" ? "bg-[#288EDF]" : "bg-[#FAFAFA]" } w-full h-full rounded-2xl `}></div> </div>
 									<p className="text-[16px] sm:text-[25px] md:text-[25px]">
 										Male
 									</p>
 								</div>
 								<div className="flex items-center gap-2  text-[16px] sm:text-[20px] sm:gap-4 ">
 									<div
-										className={`w-[13px] sm:w-6 h-[13px] sm:h-6 border-1 rounded-[50%] sm:rounded-[50%]  md:w-5 md:h-5 md:rounded-[50%] ${
-											Gender == "Female" ? "bg-[#288EDF]" : "bg-[#FAFAFA]"
+										className={`w-[13px] sm:w-6 h-[13px] sm:h-6 border-2 rounded-[50%] sm:rounded-[50%]  md:w-5 md:h-5 md:rounded-[50%] flex items-center justify-center p-[1px] sm:p-1 ${
+											Gender == "Female" ? "border-[#288EDF]" : "border-[#000000]"
 										} `}
 										onClick={() =>
 											setGender(Gender == "Female" ? "" : "Female")
 										}
-									></div>
+									> <div className={`${ Gender == "Female" ? "bg-[#288EDF]" : "bg-[#FAFAFA]" } w-full h-full rounded-2xl `}></div> </div>
 									<p className="text-[16px] sm:text-[25px] md:text-[25px]">
 										Female
 									</p>
 								</div>
 								<div className="flex items-center gap-2  text-[16px] sm:text-[20px] sm:mr-28 sm:gap-4 ">
 									<div
-										className={`w-[13px] sm:w-6 h-[13px] sm:h-6 border-1 rounded-[50%] sm:rounded-[50%] md:w-5 md:h-5 md:rounded-[50%] ${
-											Gender == "Others" ? "bg-[#288EDF]" : "bg-[#FAFAFA]"
+										className={`w-[13px] sm:w-6 h-[13px] sm:h-6 border-2 rounded-[50%] sm:rounded-[50%] md:w-5 md:h-5 md:rounded-[50%] flex items-center justify-center p-[1px] sm:p-1 ${
+											Gender == "Others" ? "border-[#288EDF]" : "border-[#000000]"
 										} `}
 										onClick={() =>
 											setGender(Gender == "Others" ? "" : "Others")
 										}
-									></div>
+									> <div className={`${ Gender == "Others" ? "bg-[#288EDF]" : "bg-[#FAFAFA]" } w-full h-full rounded-2xl `}></div> </div>
 									<p className="text-[16px] sm:text-[25px] md:text-[25px]">
 										Others
 									</p>
