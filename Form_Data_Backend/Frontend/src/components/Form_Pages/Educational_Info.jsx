@@ -11,8 +11,6 @@ const Educational_Info = () => {
 		qualification: "",
 		percentage: "",
 		file: "",
-		phone: "",
-		dob: "",
 		currentcourse: "",
 		passingyear: PassingYear,
 	});
@@ -54,25 +52,42 @@ const Educational_Info = () => {
 			<div className="fixed z-3">
 				<Form />
 			</div>
-			<div className="w-full top-0 sm:h-60 h-40 bg-white fixed z-1"></div>
-			<div className="static mt-45 sm:mt-70 z-0">
+			<div className="w-full top-0 sm:h-60 h-52 bg-white fixed z-1"></div>
+			{/* bar for phones */}
+			<div className="fixed z-3 sm:hidden border-2 w-[80%] h-5 rounded-[50px] top-45 left-[10%] ">
+				<div
+					className={`border-none rounded-l-[20px] h-full transition-[width] duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] w-[var(--w)] text-white font-bold text-[15px] flex justify-center items-center ${
+						progression == 0 ? "hidden" : ""
+					} ${
+						filled <= 40
+							? "bg-[#BA181B]"
+							: filled <= 70
+							? "bg-orange-500"
+							: filled <= 95
+							? "bg-green-500"
+							: filled == 96
+							? "bg-green-500 rounded-r-[6px]"
+							: filled <= 98
+							? "bg-green-500 rounded-r-[10px]"
+							: filled == 99
+							? "bg-green-500 rounded-r-[15px]"
+							: filled == 100
+							? "bg-green-500 rounded-r-[20px]"
+							: ""
+					}`}
+					style={{ "--w": `${filled}%` }}
+				>{`${Math.floor(progression)}%`}</div>
+			</div>
+			<div className="static mt-55 sm:mt-70 z-0">
 				{/* Heading section */}
-				<div className="border-2 sm:border-none sm:pt-5 border-[#000000] mx-4 sm:h-30 sm:mx-4 h-[35px] my-2 sm:mt-3 sm:mb-0 m-auto ">
-					<div className="sm:my-2">
-						<div className="flex align-center justify-center sm:my-0 my-[4px]">
-							<div className="border- w-[24px] sm:w-20">
-								<img
-									className="w-[23px] sm:w-[52px]"
-									src={educational_info}
-									alt=""
-								/>
-							</div>
-							<h1 className="text-[14px] sm:text-[25px] font-normal sm:font-semibold ">
-								Education Information
-							</h1>
-						</div>
+				<div className="w-[95%] border-2 sm:border-none mx-auto mt-3 sm:mt-6 text-center">
+					<div className="flex justify-center items-center gap-3">
+						<img className="w-6 sm:w-12" src={educational_info} alt="" />
+						<h1 className="text-[16px] sm:text-[28px] font-semibold">
+							Education Information
+						</h1>
 					</div>
-					<div className="none sm:block sm:border-[4px] sm:h-0  sm:border-[#292D32] sm:w-[372px] sm:m-auto"></div>
+					<div className="hidden sm:block border-[3px] border-[#292D32] w-[350px] mx-auto mt-3"></div>
 				</div>
 				{/* Form section */}
 				<div className="w-[95%] mx-auto mt-4 sm:mt-6 flex">
@@ -243,14 +258,15 @@ const Educational_Info = () => {
 								value={"Save"}
 							/>
 						</div>
-
 						{/* Backward Forward  */}
 
 						<div className=" border- flex items-center justify-between max-w-full h-7 sm:h-[47px] md:mt-4 md:h-[40px] ">
 							<Link to="/form/personal_info">
-								<p className=" text-[16px] font-bold sm:font-normal sm:text-[36px] ">Back</p>
+								<p className=" text-[16px] font-bold sm:font-normal sm:text-[36px] ">
+									Back
+								</p>
 							</Link>
-							<Link to="/form/educational_info">
+							<Link to="/form/professional_info">
 								<img className="w-10  ml-[90%] sm:ml-30 " src={next} alt="" />
 							</Link>
 						</div>
@@ -259,10 +275,10 @@ const Educational_Info = () => {
 					{/*Progression Bar*/}
 					<div className="hidden sm:flex flex-col gap- justify-around sm:fixed sm:top-66 sm:left-290 lg:left-[93%]">
 						<div
-							className={`border-2 h-[19rem] rounded-[20px] sm:flex sm:flex-col sm:flex-col-reverse `}
+							className={`border-2  h-[19rem] rounded-[20px] sm:flex sm:flex-col sm:flex-col-reverse `}
 						>
 							<div
-								className={`border-none rounded-b-[20px] w-full transition-[height] duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] h-[var(--h)] text-white font-bold text-center ${
+								className={`border-none rounded-b-[20px] w-full transition-[height] duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] h-[var(--h)] text-white  font-bold text-center ${
 									filled <= 40
 										? "bg-[#BA181B]"
 										: filled <= 70
