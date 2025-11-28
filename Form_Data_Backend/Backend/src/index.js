@@ -1,35 +1,31 @@
-import express from "express";
-import dotenv from "dotenv";
-import connectDb from "./config/db.js";
-import cors from "cors";
-import UserRouter from "./routes/Userroutes.js";
+import express from 'express'
+import dotenv from 'dotenv'
+import connectDb from './config/db.js'
+import cors from 'cors'
+import UserRouter from './routes/Userroutes.js'
+import fileupload from 'express-fileupload'
+dotenv.config()
+const app = express()
+app.use(cors({ origin: "*", credentials: true }));
+app.use(express.json());
+app.use(fileupload({
+		useTempFiles: true,
+	}));
+connectDb(process.env.Mongo_Url)
+	.then(() => console.log("MongoDB Connected"))
+	.catch((err) => console.log("DB Error:", err));
 
-dotenv.config();
-const app = express();
+app.use("/user",UserRouter)
 
-// CORS FIX
-app.use(
-	cors({
-		origin: "*",
-		methods: ["GET", "POST", "PUT", "DELETE"],
-		credentials: true,
-	})
-);
-
-// BODY PARSER FIX
-app.use(express.json({ limit: "10mb" }));
-app.use(express.urlencoded({ extended: true, limit: "10mb" }));
-
-connectDb(process.env.Mongo_Url);
-
-app.use("/user", UserRouter);
-
-app.get("/", (req, res) => {
-	res.json("React-Form Backend");
+app.post("/test", (req, res) => {
+	res.json({ message: "POST working" });
 });
 
-// PORT FIX
-const Port = process.env.PORT || 5000;
-app.listen(Port, () => {
-	console.log(`Server running on port ${Port}`);
-});
+app.get("/", (req,res)=>{
+    res.json("React-Form Backend")
+})
+
+const Port=process.env.PORT || 8000
+app.listen(Port,()=>{
+    console.log(`server is running on http://localhost:${Port}`)
+})
