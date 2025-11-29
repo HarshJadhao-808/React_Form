@@ -260,12 +260,14 @@ const Identity_Info = () => {
 
 								{/* Save Button */}
 
-								<div className="ml-66 mt-3 sm:ml-120 md:ml-140 lg:ml-200 sm:mt-5 border-2 flex items-center justify-center w-18 sm:w-[218px] md:w-[150px] h-7 sm:h-[47px] md:h-[40px] ">
-									<input
-										className="sm:text-[26px] md:text-[25px] "
-										type="submit"
-										value={"Save"}
-									/>
+								<div className="border- flex max-w-4xl m-auto w-full justify-end mt-3">
+									<div className="text-[18px] border-2 py-1 text-center w-20 sm:w-40  ">
+										<input
+											className="sm:text-[26px] md:text-[25px] "
+											type="submit"
+											value={"Save"}
+										/>
+									</div>
 								</div>
 
 								{/* Backward Forward  */}
@@ -278,7 +280,7 @@ const Identity_Info = () => {
 									</Link>
 									<Link to="/form/review">
 										<img
-											className="w-10  ml-[90%] sm:ml-30 "
+											className="w-10 sm:ml-30 "
 											src={next}
 											alt=""
 										/>

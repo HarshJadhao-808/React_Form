@@ -171,7 +171,7 @@ const Professional_info = () => {
 
 							{/* If Yes */}
 							<div
-								className={`border- h-50 grid   overflow-hidden transition-all duration-300 ${
+								className={`border- sm:h-50 grid overflow-hidden transition-all duration-300 ${
 									workstatus === "yes"
 										? "max-h-[500px] opacity-100"
 										: "max-h-0 opacity-0"

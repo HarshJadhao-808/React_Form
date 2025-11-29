@@ -16,14 +16,13 @@ const Personal_Info = () => {
 		phone: "",
 		dob: "",
 		address: "",
-		gender:Gender
+		gender: Gender,
 	});
 
 	const Changes = (e) => {
-     setuserData({...userData,[e.target.name]:e.target.value})
-	 console.log(userData)
+		setuserData({ ...userData, [e.target.name]: e.target.value });
+		console.log(userData);
 	};
-	
 
 	const SaveIt = () => {
 		event.preventDefault();
@@ -35,10 +34,10 @@ const Personal_Info = () => {
 	);
 
 	const [totalfields, setTotalfields] = useState(Object.keys(userData).length);
-	const progression = (filledfields / totalfields ) * 100;
+	const progression = (filledfields / totalfields) * 100;
 	// console.log(filledfields);
 	// console.log(totalfields);
-	console.log(progression)
+	console.log(progression);
 
 	useEffect(() => {
 		setuserData((prev) => ({ ...prev, gender: Gender }));
@@ -48,12 +47,11 @@ const Personal_Info = () => {
 		setFilledfields(Object.values(userData).filter((v) => v !== "").length);
 	}, [userData]);
 
-   
 	useEffect(() => {
 		setTimeout(() => setFilled(progression), 500);
 	}, [progression]);
-	
-// console.log(Gender)
+
+	// console.log(Gender)
 	return (
 		<>
 			<div className="fixed z-3">
@@ -63,7 +61,9 @@ const Personal_Info = () => {
 			{/* bar for phones */}
 			<div className="fixed z-3 sm:hidden border-2 w-[80%] h-5 rounded-[50px] top-45 left-[10%] ">
 				<div
-					className={`border-none rounded-l-[20px] h-full transition-[width] duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] w-[var(--w)] text-white font-bold text-[15px] flex justify-center items-center ${progression == 0 ? "hidden" : ""} ${
+					className={`border-none rounded-l-[20px] h-full transition-[width] duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] w-[var(--w)] text-white font-bold text-[15px] flex justify-center items-center ${
+						progression == 0 ? "hidden" : ""
+					} ${
 						filled <= 40
 							? "bg-[#BA181B]"
 							: filled <= 70
@@ -83,8 +83,8 @@ const Personal_Info = () => {
 					style={{ "--w": `${filled}%` }}
 				>{`${Math.floor(progression)}%`}</div>
 			</div>
-			{/* Heading */}
 			<div className="static mt-55 sm:mt-70 z-0">
+				{/* Heading */}
 				<div className="w-[95%] border-2 sm:border-none mx-auto mt-3 sm:mt-6 text-center">
 					<div className="flex justify-center items-center gap-3">
 						<img className="w-6 sm:w-12" src={personal_user} alt="" />
@@ -98,7 +98,7 @@ const Personal_Info = () => {
 				<div className="w-[95%] mx-auto mt-4 sm:mt-6 flex">
 					<form
 						onSubmit={SaveIt}
-						className="w-full max-w-4xl mx-auto flex flex-col gap-6"
+						className="w-full max-w-9xl mx-auto flex flex-col gap-6"
 					>
 						{/* Profile Image */}
 						<label className="border-2 border-[#193E6D] w-[75%] sm:w-[420px] mx-auto flex flex-col justify-center items-center rounded-xl py-4">
@@ -179,7 +179,14 @@ const Personal_Info = () => {
 											Gender == "Male" ? "border-[#288EDF]" : "border-[#000000]"
 										} `}
 										onClick={() => setGender(Gender == "Male" ? "" : "Male")}
-									> <div className={`${ Gender == "Male" ? "bg-[#288EDF]" : "bg-[#FAFAFA]" } w-full h-full rounded-2xl `}></div> </div>
+									>
+										{" "}
+										<div
+											className={`${
+												Gender == "Male" ? "bg-[#288EDF]" : "bg-[#FAFAFA]"
+											} w-full h-full rounded-2xl `}
+										></div>{" "}
+									</div>
 									<p className="text-[16px] sm:text-[25px] md:text-[25px]">
 										Male
 									</p>
@@ -187,12 +194,21 @@ const Personal_Info = () => {
 								<div className="flex items-center gap-2  text-[16px] sm:text-[20px] sm:gap-4 ">
 									<div
 										className={`w-[13px] sm:w-6 h-[13px] sm:h-6 border-2 rounded-[50%] sm:rounded-[50%]  md:w-5 md:h-5 md:rounded-[50%] flex items-center justify-center p-[1px] sm:p-1 ${
-											Gender == "Female" ? "border-[#288EDF]" : "border-[#000000]"
+											Gender == "Female"
+												? "border-[#288EDF]"
+												: "border-[#000000]"
 										} `}
 										onClick={() =>
 											setGender(Gender == "Female" ? "" : "Female")
 										}
-									> <div className={`${ Gender == "Female" ? "bg-[#288EDF]" : "bg-[#FAFAFA]" } w-full h-full rounded-2xl `}></div> </div>
+									>
+										{" "}
+										<div
+											className={`${
+												Gender == "Female" ? "bg-[#288EDF]" : "bg-[#FAFAFA]"
+											} w-full h-full rounded-2xl `}
+										></div>{" "}
+									</div>
 									<p className="text-[16px] sm:text-[25px] md:text-[25px]">
 										Female
 									</p>
@@ -200,12 +216,21 @@ const Personal_Info = () => {
 								<div className="flex items-center gap-2  text-[16px] sm:text-[20px] sm:mr-28 sm:gap-4 ">
 									<div
 										className={`w-[13px] sm:w-6 h-[13px] sm:h-6 border-2 rounded-[50%] sm:rounded-[50%] md:w-5 md:h-5 md:rounded-[50%] flex items-center justify-center p-[1px] sm:p-1 ${
-											Gender == "Others" ? "border-[#288EDF]" : "border-[#000000]"
+											Gender == "Others"
+												? "border-[#288EDF]"
+												: "border-[#000000]"
 										} `}
 										onClick={() =>
 											setGender(Gender == "Others" ? "" : "Others")
 										}
-									> <div className={`${ Gender == "Others" ? "bg-[#288EDF]" : "bg-[#FAFAFA]" } w-full h-full rounded-2xl `}></div> </div>
+									>
+										{" "}
+										<div
+											className={`${
+												Gender == "Others" ? "bg-[#288EDF]" : "bg-[#FAFAFA]"
+											} w-full h-full rounded-2xl `}
+										></div>{" "}
+									</div>
 									<p className="text-[16px] sm:text-[25px] md:text-[25px]">
 										Others
 									</p>
@@ -228,26 +253,28 @@ const Personal_Info = () => {
 
 						{/* Save Button */}
 
-						<div className="ml-66 mt-3 sm:ml-120 md:ml-140 lg:ml-200 sm:mt-5 border-2 flex items-center justify-center w-18 sm:w-[218px] md:w-[150px] h-7 sm:h-[47px] md:h-[40px] ">
-							<input
-								className="sm:text-[26px] md:text-[25px] "
-								type="submit"
-								value={"Save"}
-							/>
+						<div className="border- flex max-w-4xl m-auto w-full justify-end mt-3">
+							<div className="text-[18px] border-2 py-1 text-center w-20 sm:w-40  ">
+								<input
+									className="sm:text-[26px] md:text-[25px] "
+									type="submit"
+									value={"Save"}
+								/>
+							</div>
 						</div>
-						<Link to="/form/educational_info">
-							<img
-								className="w-10 sm:hidden ml-[90%] "
-								src={next}
-								alt=""
-							/>
-						</Link>
+						{/* Backward Forward  */}
+
+						<div className=" border- flex items-center justify-end max-w-full h-7 sm:h-[47px] md:mt-4 md:h-[40px] ">
+							<Link to="/form/educational_info">
+								<img className="w-10   sm:ml-30 " src={next} alt="" />
+							</Link>
+						</div>
 					</form>
 
 					{/* Next Arrow */}
 					<div className="hidden sm:flex flex-col gap- justify-around sm:fixed sm:top-66 sm:left-290 lg:left-[93%]">
 						<div
-							className={`border-2 h-[19rem] rounded-[20px] sm:flex sm:flex-col sm:flex-col-reverse `}
+							className={`border-2 w-11 h-[19rem] rounded-[20px] sm:flex sm:flex-col sm:flex-col-reverse `}
 						>
 							<div
 								className={`border-none rounded-b-[20px] w-full transition-[height] duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] h-[var(--h)] text-white font-bold text-center ${
@@ -270,9 +297,6 @@ const Personal_Info = () => {
 								style={{ "--h": `${filled}%` }}
 							>{`${Math.floor(progression)}%`}</div>
 						</div>
-						<Link to="/form/educational_info">
-							<img className="w-10 mt-10 " src={next} alt="" />
-						</Link>
 					</div>
 				</div>
 			</div>

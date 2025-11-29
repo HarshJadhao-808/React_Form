@@ -19,7 +19,7 @@ const Signup = () => {
 	const signFun = async (event) => {
 		event.preventDefault();
 		try {
-			const response = await axios.post("https://react-form-zwyl.onrender.com/user/signup", Userdata);
+			const response = await axios.post("https://react-form-2-l50h.onrender.com/user/signup", Userdata);
 			console.log("Signup Successfull", response.data);
 			Swal.fire({
 				text: "Signup Successfull !",
