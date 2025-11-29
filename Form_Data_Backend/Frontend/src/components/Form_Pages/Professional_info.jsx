@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Professional_info = () => {
 	const [experience, setexperience] = useState("");
 	const [workstatus, setWorkstatus] = useState("");
-	const [check, setCheck] = useState("");
+	const [check, setCheck] = useState([]);
 	const [filled, setFilled] = useState(0);
 
 	const [userData, setuserData] = useState({
@@ -16,6 +16,17 @@ const Professional_info = () => {
 		check,
 		experience,
 	});
+
+	const checkfun = (skill) => {
+		setCheck((prev) => prev.includes(skill) ?
+		 prev.filter((el) => el !== skill )
+		:
+		[...prev,skill]
+	)}
+
+	useEffect(()=>{
+		setFilledfields(Object.values(userData).filter((value) => value !== "" && (Array.isArray(value) ? value.length > 0 : true) ).length)
+	},[check])
 
 	useEffect(() => {
 		workstatus == "yes"
@@ -32,17 +43,17 @@ const Professional_info = () => {
 
 	const SaveIt = () => {
 		event.preventDefault();
-		// console.log(userData);
+		console.log(userData);
 	};
 
 	const [filledfields, setFilledfields] = useState(
-		Object.values(userData).filter((value) => value !== "").length
+		Object.values(userData).filter((value) => value !== "" && (Array.isArray(value) ? value.length > 0 : true)).length
 	);
 
 	const [totalfields, setTotalfields] = useState(Object.keys(userData).length);
 	const progression = (filledfields / totalfields) * 100;
 	// console.log(filledfields);
-	console.log(totalfields);
+	// console.log(totalfields);
 	// console.log(progression);
 
 	useEffect(() => {
@@ -55,10 +66,10 @@ const Professional_info = () => {
 
 	useEffect(() => {
 		setuserData((prev) => ({ ...prev, check }));
-		console.log(check);
+		// console.log(check);
 	}, [check]);
 	useEffect(() => {
-		setFilledfields(Object.values(userData).filter((v) => v !== "").length);
+		setFilledfields(Object.values(userData).filter((value) => value !== "" && (Array.isArray(value) ? value.length > 0 : true) ).length);
 	}, [userData]);
 
 	useEffect(() => {
@@ -315,7 +326,7 @@ const Professional_info = () => {
 											value="html"
 											name="html"
 											onClick={() =>
-												check == "html" ? setCheck("") : setCheck("html")
+												checkfun("html")
 											}
 										/>
 										{/* SVG Tick */}
@@ -342,7 +353,7 @@ const Professional_info = () => {
 											type="checkbox"
 											className="peer appearance-none w-5 h-5 border-2 rounded-md checked:bg-blue-600 checked:border-blue-600 flex items-center justify-center"
 											onClick={() =>
-												check == "css" ? setCheck("") : setCheck("css")
+												checkfun("css")
 											}
 										/>
 										<svg
@@ -368,7 +379,7 @@ const Professional_info = () => {
 											type="checkbox"
 											className="peer appearance-none w-5 h-5 border-2 rounded-md checked:bg-blue-600 checked:border-blue-600 flex items-center justify-center"
 											onClick={() =>
-												check == "js" ? setCheck("") : setCheck("js")
+												checkfun("js")
 											}
 										/>
 										<svg
@@ -394,7 +405,7 @@ const Professional_info = () => {
 											type="checkbox"
 											className="peer appearance-none w-5 h-5 border-2 rounded-md checked:bg-blue-600 checked:border-blue-600 flex items-center justify-center"
 											onClick={() =>
-												check == "react" ? setCheck("") : setCheck("react")
+												checkfun("react")
 											}
 										/>
 										<svg
@@ -420,7 +431,7 @@ const Professional_info = () => {
 											type="checkbox"
 											className="peer appearance-none w-5 h-5 border-2 rounded-md checked:bg-blue-600 checked:border-blue-600 flex items-center justify-center"
 											onClick={() =>
-												check == "nodejs" ? setCheck("") : setCheck("nodejs")
+												checkfun("nodejs")
 											}
 										/>
 										<svg
@@ -446,7 +457,7 @@ const Professional_info = () => {
 											type="checkbox"
 											className="peer appearance-none w-5 h-5 border-2 rounded-md checked:bg-blue-600 checked:border-blue-600 flex items-center justify-center"
 											onClick={() =>
-												check == "others" ? setCheck("") : setCheck("others")
+												checkfun("others")
 											}
 										/>
 										<svg

@@ -21,7 +21,7 @@ const Personal_Info = () => {
 
 	const Changes = (e) => {
 		setuserData({ ...userData, [e.target.name]: e.target.value });
-		console.log(userData);
+		// console.log(userData);
 	};
 
 	const SaveIt = () => {
@@ -37,7 +37,7 @@ const Personal_Info = () => {
 	const progression = (filledfields / totalfields) * 100;
 	// console.log(filledfields);
 	// console.log(totalfields);
-	console.log(progression);
+	// console.log(progression);
 
 	useEffect(() => {
 		setuserData((prev) => ({ ...prev, gender: Gender }));

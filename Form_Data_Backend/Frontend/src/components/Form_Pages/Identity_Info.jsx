@@ -8,16 +8,16 @@ const Identity_Info = () => {
 	const [PassingYear, setPassingYear] = useState("");
 	const [filled, setFilled] = useState(0);
 	const [userData, setuserData] = useState({
-		qualification: "",
-		percentage: "",
-		file: "",
-		currentcourse: "",
-		passingyear: PassingYear,
+		address: "",
+		adhaarnum: "",
+		addressproof: "",
+		pannum: "",
+		signatureproof: "",
 	});
 
 	const Changes = (e) => {
 		setuserData({ ...userData, [e.target.name]: e.target.value });
-		console.log(userData);
+		// console.log(userData);
 	};
 
 	const SaveIt = () => {
@@ -33,7 +33,7 @@ const Identity_Info = () => {
 	const progression = (filledfields / totalfields) * 100;
 	// console.log(filledfields);
 	// console.log(totalfields);
-	console.log(progression);
+	// console.log(progression);
 
 	useEffect(() => {
 		setuserData((prev) => ({ ...prev, passingyear: PassingYear }));
@@ -96,164 +96,82 @@ const Identity_Info = () => {
 								onSubmit={SaveIt}
 								className="border- w-full max-w-9xl mx-auto flex flex-col gap-6"
 							>
-								{/* Highest Qualification */}
+								{/* Aadhaar Number */}
 								<div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
 									<label className="text-[18px] sm:text-[24px] font-medium">
-										Highest Qualification: :
-									</label>
-									<select
-										className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
-										name="qualification"
-										onChange={Changes}
-									>
-										<option value="">none</option>
-										<option value="10th">10th</option>
-										<option value="12th">12th</option>
-										<option value="diploma">Diploma</option>
-										<option value="graduate">Graduate</option>
-										<option value="postgraduate">Post Graduate</option>
-									</select>
-								</div>
-
-								{/* Percentage/CGPA: */}
-								<div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
-									<label className="text-[18px] sm:text-[24px] font-medium">
-										Percentage/CGPA:
+										Aadhaar Number :
 									</label>
 									<input
-										type="email"
+										type="number"
 										onChange={Changes}
-										name="percentage"
-										className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
+										placeholder="000000-000000"
+										name="adhaarnum"
+										className="no-spinner col-span-2 border border-[#193E6D] rounded-lg h-[40px] text-center sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 									/>
 								</div>
 
-								{/* passing year */}
-								<div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-2 items-center">
-									<label className="text-[18px] sm:text-[24px] font-medium">
-										Passing Year :
-									</label>
-									<div className="border- rounded-lg py-2 px-4 w-full flex justify-between sm:justify-center sm:gap-10">
-										<div className="flex items-center gap-2   text-[16px] sm:text-[20px] sm:gap-4  ">
-											<div
-												className={`w-[13px] sm:w-6 h-[13px] sm:h-6 border-2 rounded-[50%] sm:rounded-[50%] md:w-5 md:h-5 md:rounded-[50%] flex items-center justify-center p-[1px] sm:p-1 ${
-													PassingYear == "1st"
-														? "border-[#288EDF]"
-														: "border-[#000000]"
-												} `}
-												onClick={() =>
-													setPassingYear(PassingYear == "1st" ? "" : "1st")
-												}
-											>
-												<div
-													className={`${
-														PassingYear == "1st"
-															? "bg-[#288EDF]"
-															: "bg-[#FAFAFA]"
-													} w-full h-full rounded-2xl `}
-												></div>{" "}
-											</div>
-											<p className="text-[16px] sm:text-[25px] md:text-[25px]">
-												1st
-											</p>
-										</div>
-										<div className="flex items-center gap-2  text-[16px] sm:text-[20px] sm:gap-4 ">
-											<div
-												className={`w-[13px] sm:w-6 h-[13px] sm:h-6 border-2 rounded-[50%] sm:rounded-[50%]  md:w-5 md:h-5 md:rounded-[50%] flex items-center justify-center p-[1px] sm:p-1 ${
-													PassingYear == "2nd"
-														? "border-[#288EDF]"
-														: "border-[#000000]"
-												} `}
-												onClick={() =>
-													setPassingYear(PassingYear == "2nd" ? "" : "2nd")
-												}
-											>
-												{" "}
-												<div
-													className={`${
-														PassingYear == "2nd"
-															? "bg-[#288EDF]"
-															: "bg-[#FAFAFA]"
-													} w-full h-full rounded-2xl `}
-												></div>{" "}
-											</div>
-											<p className="text-[16px] sm:text-[25px] md:text-[25px]">
-												2nd
-											</p>
-										</div>
-										<div className="flex items-center gap-2  text-[16px] sm:text-[20px]  sm:gap-4 ">
-											<div
-												className={`w-[13px] sm:w-6 h-[13px] sm:h-6 border-2 rounded-[50%] sm:rounded-[50%] md:w-5 md:h-5 md:rounded-[50%] flex items-center justify-center p-[1px] sm:p-1 ${
-													PassingYear == "3rd"
-														? "border-[#288EDF]"
-														: "border-[#000000]"
-												} `}
-												onClick={() =>
-													setPassingYear(PassingYear == "3rd" ? "" : "3rd")
-												}
-											>
-												{" "}
-												<div
-													className={`${
-														PassingYear == "3rd"
-															? "bg-[#288EDF]"
-															: "bg-[#FAFAFA]"
-													} w-full h-full rounded-2xl `}
-												></div>{" "}
-											</div>
-											<p className="text-[16px] sm:text-[25px] md:text-[25px]">
-												3rd
-											</p>
-										</div>
-										<div className="flex items-center gap-2  text-[16px] sm:text-[20px] sm:mr-28 sm:gap-4 ">
-											<div
-												className={`w-[13px] sm:w-6 h-[13px] sm:h-6 border-2 rounded-[50%] sm:rounded-[50%] md:w-5 md:h-5 md:rounded-[50%] flex items-center justify-center p-[1px] sm:p-1 ${
-													PassingYear == "4th"
-														? "border-[#288EDF]"
-														: "border-[#000000]"
-												} `}
-												onClick={() =>
-													setPassingYear(PassingYear == "4th" ? "" : "4th")
-												}
-											>
-												{" "}
-												<div
-													className={`${
-														PassingYear == "4th"
-															? "bg-[#288EDF]"
-															: "bg-[#FAFAFA]"
-													} w-full h-full rounded-2xl `}
-												></div>{" "}
-											</div>
-											<p className="text-[16px] sm:text-[25px] md:text-[25px]">
-												4th
-											</p>
-										</div>
-									</div>
-								</div>
-
-								{/* Upload File */}
+								{/* Pan Number*/}
 								<div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
 									<label className="text-[18px] sm:text-[24px] font-medium">
-										Upload File:
-									</label>
-									<input
-										type="file"
-										onChange={Changes}
-										name="file"
-										className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
-									/>
-								</div>
-
-								{/* Current Course */}
-								<div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
-									<label className="text-[18px] sm:text-[24px] font-medium">
-										Current Course(if any):
+										Pan Number :
 									</label>
 									<input
 										type="text"
 										onChange={Changes}
-										name="currentcourse"
+										name="pannum"
+										className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
+									/>
+								</div>
+
+								{/* Address Proof */}
+								<div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+									<label className="text-[18px] sm:text-[24px] font-medium">
+										Address Proof :
+									</label>
+									<select
+										className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
+										name="address"
+										onChange={Changes}
+									>
+										<option value="">none</option>
+										<option value="aadhaar">Aadhaar</option>
+										<option value="electricitybill">Electricity Bill</option>
+										<option value="rationcard">Ration Card</option>
+										<option value="passport">Passport</option>
+									</select>
+								</div>
+
+								{/* Upload Address Proof File */}
+
+								<div
+									className={`border- sm:h-50 grid overflow-hidden transition-all duration-300 ${
+										userData.address === ""
+											? "max-h-0 opacity-0"
+											: "max-h-[60px] opacity-100"
+									}`}
+								>
+									<div className=" w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+										<label className="text-[18px] sm:text-[24px] font-medium">
+											Upload Address Proof :
+										</label>
+										<input
+											type="file"
+											onChange={Changes}
+											name="addressproof"
+											className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
+										/>
+									</div>
+								</div>
+
+								{/* Upload Signature Proof File */}
+								<div className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+									<label className="text-[18px] sm:text-[24px] font-medium">
+										Signature Upload :
+									</label>
+									<input
+										type="file"
+										onChange={Changes}
+										name="signatureproof"
 										className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 									/>
 								</div>
@@ -279,11 +197,7 @@ const Identity_Info = () => {
 										</p>
 									</Link>
 									<Link to="/form/review">
-										<img
-											className="w-10 sm:ml-30 "
-											src={next}
-											alt=""
-										/>
+										<img className="w-10 sm:ml-30 " src={next} alt="" />
 									</Link>
 								</div>
 							</form>
