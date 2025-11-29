@@ -3,11 +3,13 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import email from "/src/assets/email.svg";
 import password from "/src/assets/password.svg";
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
    const [user,setUser] = useState({
     email:"",
     password:""
    })
+   const navigateto = useNavigate()
   const logFun = async() => {
       event.preventDefault()
           try {
@@ -17,6 +19,7 @@ const Login = () => {
 					text: "Login Successfull !",
 					icon: "success",
 				});
+		 navigateto("/form/personal_info");
       } catch (error) {
         console.log("Signup Failed", error)
        Swal.fire({
