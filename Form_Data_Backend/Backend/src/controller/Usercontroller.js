@@ -10,9 +10,9 @@ export const Signupfun = async(req,res) => {
     
      const {name,email,password,role} = req.body
        
-    //  const userexists = await findOne({email})
+     const userexists = await User.findOne({email})
 
-    //  if(!userexists) return res.status(400).send("User already exists")
+     if(userexists) return res.status(400).send("User already exists")
 
        const hashed_password =await bcrypt.hash(password,10)
        let data = await User.create({
