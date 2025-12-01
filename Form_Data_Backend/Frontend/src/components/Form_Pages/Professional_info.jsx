@@ -3,6 +3,7 @@ import Form from "../Form";
 import professional_info from "/src/assets/professional_info.svg";
 import next from "/src/assets/next.svg";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Professional_info = () => {
 	const [experience, setexperience] = useState("");

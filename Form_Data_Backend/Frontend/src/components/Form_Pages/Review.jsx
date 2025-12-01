@@ -3,6 +3,7 @@ import Form from "../Form";
 import Additional_info from "/src/assets/Additional_info.svg";
 import next from "/src/assets/next.svg";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Review = () => {
 	const [contactmethod, setContactmethod] = useState("");

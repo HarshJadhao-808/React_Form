@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Form from "../Form";
 import educational_info from "/src/assets/educational_info.svg";
 import next from "/src/assets/next.svg";
+import axios from "axios";
 
 const Educational_Info = () => {
 	const [PassingYear, setPassingYear] = useState("");

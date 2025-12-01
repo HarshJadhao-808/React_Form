@@ -34,7 +34,7 @@ const Personal_Info = () => {
 
 	const SaveIt = async() => {
 		event.preventDefault();
-		axios.post("https://react-form-2-l50h.onrender.com/form/personal_info",data);
+		await axios.post("https://react-form-2-l50h.onrender.com/form/personal_info",data);
 		console.log(data);
 	};
 
