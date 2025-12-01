@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
 const FormSchema = new mongoose.Schema({
-	userid: { type: mongoose.Schema.Types.ObjectId, ref:"User", required: true },
+	User: { type:String},
 	Personal_Info: { type: Array , default:[] },
 	Educational_Info: { type: Array , default:[] },
-	Professional_info: { type: Array , default:[] },
+	Professional_Info: { type: Array , default:[] },
 	Identity_Info: { type: Array , default:[] },
 	Review: { type: Array , default:[] },
 	submitted: { type: Boolean, required: true, default: false },

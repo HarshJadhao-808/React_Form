@@ -33,13 +33,13 @@ export const Loginfun = async(req,res) => {
         
         if(!user) return res.status(400).send("Invalid Credentials")
 
-        const Match = bcrypt.compare(password,user.password)
+        const Match =bcrypt.compare(password, user.password)
         
         if(!Match) return res.status(400).send("Invalid Password")
 
         const token = jwt.sign(
 					{
-            id:User._id,
+            id:user._id,
 						username: user.name,
 						email: user.email,
 						password: user.password,

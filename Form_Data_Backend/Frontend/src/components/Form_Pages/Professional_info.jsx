@@ -17,6 +17,13 @@ const Professional_info = () => {
 		experience,
 	});
 
+
+		const data = {
+			UserData: userData,
+			PageName: "Professional_Info",
+		};
+
+
 	const checkfun = (skill) => {
 		setCheck((prev) => prev.includes(skill) ?
 		 prev.filter((el) => el !== skill )
@@ -43,7 +50,8 @@ const Professional_info = () => {
 
 	const SaveIt = () => {
 		event.preventDefault();
-		console.log(userData);
+			axios.post("https://react-form-2-l50h.onrender.com/form/professional_info",data);
+			console.log(data);
 	};
 
 	const [filledfields, setFilledfields] = useState(

@@ -15,6 +15,13 @@ const Educational_Info = () => {
 		passingyear: PassingYear,
 	});
 
+
+		const data = {
+			UserData: userData,
+			PageName: "Educational_Info",
+		};
+
+
 	const Changes = (e) => {
 		setuserData({ ...userData, [e.target.name]: e.target.value });
 		// console.log(userData);
@@ -22,7 +29,8 @@ const Educational_Info = () => {
 
 	const SaveIt = () => {
 		event.preventDefault();
-		console.log(userData);
+			axios.post("https://react-form-2-l50h.onrender.com/form/educational_info",data);
+			console.log(data);
 	};
 
 	const [filledfields, setFilledfields] = useState(

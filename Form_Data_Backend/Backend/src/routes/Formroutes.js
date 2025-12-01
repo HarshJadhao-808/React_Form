@@ -1,12 +1,38 @@
 import express from 'express'
-import { personal_get, personal_post } from '../controller/FormdataController.js'
+import { educational_post, identity_post, personal_get, personal_post, professional_post, Review_post } from '../controller/FormdataController.js'
+import tokencheck from '../middleware/Authcontroller.js'
 
 const FormRouter = express.Router()
 
 // personal info 
 
-FormRouter.get("/getdata",personal_get)
+FormRouter.get("/personal_info",personal_get)
 
-FormRouter.post("/postdata",personal_post)
+FormRouter.post("/personal_info",tokencheck,personal_post)
+
+// educational info
+
+FormRouter.get("/educational_info",educational_post)
+
+FormRouter.post("/educational_info",tokencheck,educational_post)
+
+// professional info
+
+FormRouter.get("/professional_info",professional_post)
+
+FormRouter.post("/professional_info",tokencheck,professional_post)
+
+// identity info
+
+FormRouter.get("/identity_info",identity_post)
+
+FormRouter.post("/identity_info",tokencheck,identity_post)
+
+// Review 
+
+FormRouter.get("/review_info",Review_post)
+
+FormRouter.post("/review_info",tokencheck,Review_post)
+
 
 export default FormRouter

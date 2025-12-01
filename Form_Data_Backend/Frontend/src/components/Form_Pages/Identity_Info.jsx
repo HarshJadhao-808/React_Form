@@ -15,6 +15,12 @@ const Identity_Info = () => {
 		signatureproof: "",
 	});
 
+		const data = {
+			UserData: userData,
+			PageName: "Identity_Info",
+		};
+
+
 	const Changes = (e) => {
 		setuserData({ ...userData, [e.target.name]: e.target.value });
 		// console.log(userData);
@@ -22,7 +28,8 @@ const Identity_Info = () => {
 
 	const SaveIt = () => {
 		event.preventDefault();
-		console.log(userData);
+		axios.post("https://react-form-2-l50h.onrender.com/form/identity_info",data);
+		console.log(data);
 	};
 
 	const [filledfields, setFilledfields] = useState(

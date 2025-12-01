@@ -14,6 +14,13 @@ const Review = () => {
 		finalcomments: "",
 		agreed,
 	});
+
+	const data = {
+		UserData: userData,
+		PageName: "Review_Info",
+	};
+
+
 	const Changes = (e) => {
 		setuserData({ ...userData, [e.target.name]: e.target.value });
 		// console.log(userData);
@@ -21,7 +28,8 @@ const Review = () => {
 
 	const SaveIt = () => {
 		event.preventDefault();
-		console.log(userData);
+		axios.post("https://react-form-2-l50h.onrender.com/form/review_info", data);
+		console.log(data);
 	};
 
 	const [filledfields, setFilledfields] = useState(

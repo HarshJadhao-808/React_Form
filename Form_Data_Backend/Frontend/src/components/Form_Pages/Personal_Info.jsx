@@ -4,6 +4,7 @@ import Form from "../Form";
 import personal_user from "/src/assets/personal_{user}.svg";
 import personal_info from "/src/assets/personal_info.svg";
 import next from "/src/assets/next.svg";
+import axios from "axios";
 
 const Personal_Info = () => {
 	const [Gender, setGender] = useState("");
@@ -19,14 +20,22 @@ const Personal_Info = () => {
 		gender: Gender,
 	});
 
+
+	const data = {
+		UserData:userData,
+		PageName: "Personal_Info",
+	};
+
+
 	const Changes = (e) => {
 		setuserData({ ...userData, [e.target.name]: e.target.value });
 		// console.log(userData);
 	};
 
-	const SaveIt = () => {
+	const SaveIt = async() => {
 		event.preventDefault();
-		console.log(userData);
+		axios.post("https://react-form-2-l50h.onrender.com/form/personal_info",data);
+		console.log(data);
 	};
 
 	const [filledfields, setFilledfields] = useState(
