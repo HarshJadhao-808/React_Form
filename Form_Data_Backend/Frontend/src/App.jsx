@@ -14,14 +14,6 @@ import Review from './components/Form_Pages/Review';
 function App() {
   const [arr,setArr]=useState([])
 
-  useEffect(()=>{
-//     const getfun = async () => {
-//       let res = await fetch("http://localhost:8000")
-//       let data =await res.json()
-//     setArr([...arr,data])
-//   }
-//   getfun()
-  },[])
   return (
 		<>
 			<Router>
