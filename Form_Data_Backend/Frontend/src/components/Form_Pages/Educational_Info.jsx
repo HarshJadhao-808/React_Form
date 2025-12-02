@@ -18,13 +18,23 @@ const Educational_Info = () => {
 	});
 
 	const getdata = async() =>{
-			 const res = await axios.get("https://react-form-2-l50h.onrender.com/form/educational_info");
-			 console.log(res)
+			 const res = await axios.get(
+					"https://react-form-2-l50h.onrender.com/form/educational_info",
+					{
+						headers: {
+							Authorization: Token,
+						},
+					}
+					
+				);
+			const fetchedData = res.data.UserData;
+			setuserData(fetchedData);
+			// console.log(fetchedData)
+			setPassingYear(fetchedData.passingyear)
 			}
 			getdata()
 	
-	const auth = `Bearer ${Token}`
-	console.log(auth)
+
 
 
 		const data = {
@@ -130,7 +140,7 @@ const Educational_Info = () => {
 							<select
 								className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 								name="qualification"
-								onChange={Changes}
+								onChange={Changes} value={userData.qualification}
 							>
 								<option value="">none</option>
 								<option value="10th">10th</option>
@@ -149,6 +159,7 @@ const Educational_Info = () => {
 							<input
 								type="text"
 								onChange={Changes}
+								value={userData.percentage}
 								name="percentage"
 								className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 							/>
@@ -259,6 +270,7 @@ const Educational_Info = () => {
 								type="file"
 								onChange={Changes}
 								name="file"
+								value={userData.file}
 								className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 							/>
 						</div>
@@ -272,6 +284,7 @@ const Educational_Info = () => {
 								type="text"
 								onChange={Changes}
 								name="currentcourse"
+								value={userData.currentcourse}
 								className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 							/>
 						</div>

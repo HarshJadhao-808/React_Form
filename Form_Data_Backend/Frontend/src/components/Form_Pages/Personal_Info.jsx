@@ -12,8 +12,18 @@ const Personal_Info = () => {
 		const Token = JSON.parse(localStorage.getItem("Token"));
 
 		const getdata = async() =>{
-		 const res = await axios.get("https://react-form-2-l50h.onrender.com/form/personal_info");
-		 console.log(res)
+		 const res = await axios.get(
+				"https://react-form-2-l50h.onrender.com/form/personal_info",
+				{
+					headers: {
+						Authorization: Token,
+					},
+				}
+			);
+		const fetchedData = res.data.UserData
+		setuserData(fetchedData)
+
+		setGender(fetchedData.gender)
 		}
 		getdata()
 	const [userData, setuserData] = useState({
@@ -130,6 +140,8 @@ const Personal_Info = () => {
 							<input
 								name="prfimg"
 								type="file"
+								onChange={Changes}
+								value={userData.prfimg}
 								className="hidden"
 								accept="image/*"
 							/>
@@ -143,6 +155,7 @@ const Personal_Info = () => {
 							<input
 								type="text"
 								onChange={Changes}
+								value={userData.name}
 								name="name"
 								className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 								placeholder="Full Name"
@@ -157,6 +170,7 @@ const Personal_Info = () => {
 							<input
 								type="email"
 								onChange={Changes}
+								value={userData.email}
 								name="email"
 								className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 							/>
@@ -170,6 +184,7 @@ const Personal_Info = () => {
 							<input
 								type="text"
 								onChange={Changes}
+								value={userData.phone}
 								name="phone"
 								className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 							/>
@@ -184,6 +199,7 @@ const Personal_Info = () => {
 								type="date"
 								onChange={Changes}
 								name="dob"
+								value={userData.dob}
 								className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 							/>
 						</div>
@@ -267,6 +283,7 @@ const Personal_Info = () => {
 							<input
 								type="text"
 								onChange={Changes}
+								value={userData.address}
 								name="address"
 								className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 							/>

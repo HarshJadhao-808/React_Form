@@ -28,9 +28,18 @@ const Professional_info = () => {
 
 		const getdata = async () => {
 			const res = await axios.get(
-				"https://react-form-2-l50h.onrender.com/form/professional_info"
+				"https://react-form-2-l50h.onrender.com/form/professional_info",
+				{
+					headers: {
+						Authorization: Token,
+					},
+				}
 			);
-			console.log(res);
+				const fetchedData = res.data.UserData;
+				setWorkstatus(fetchedData.workstatus)
+				setexperience(fetchedData.experience)
+				setCheck(fetchedData.skill)
+				setuserData(fetchedData);
 		};
 		getdata();
 
@@ -224,6 +233,7 @@ const Professional_info = () => {
 										<input
 											type="text"
 											onChange={Changes}
+											value={userData.company_name}
 											name="company_name"
 											className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 										/>
@@ -237,6 +247,7 @@ const Professional_info = () => {
 											type="text"
 											onChange={Changes}
 											name="job_role"
+											value={userData.job_role}
 											className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 										/>
 									</div>
@@ -516,6 +527,7 @@ const Professional_info = () => {
 									type="file"
 									onChange={Changes}
 									name="resume"
+									// value={userData.resume}
 									className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 								/>
 							</div>

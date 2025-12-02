@@ -25,9 +25,15 @@ const Identity_Info = () => {
 
 		const getdata = async () => {
 			const res = await axios.get(
-				"https://react-form-2-l50h.onrender.com/form/identity_info"
+				"https://react-form-2-l50h.onrender.com/form/identity_info",
+				{
+					headers: {
+						Authorization: Token,
+					},
+				}
 			);
-			console.log(res);
+			const fetchedData = res.data.UserData;
+			setuserData(fetchedData);
 		};
 		getdata();
 
