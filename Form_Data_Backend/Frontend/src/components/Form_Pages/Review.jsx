@@ -9,6 +9,8 @@ const Review = () => {
 	const [contactmethod, setContactmethod] = useState("");
 	const [agreed, setAgreed] = useState("");
 	const [filled, setFilled] = useState(0);
+	const Token = JSON.parse(localStorage.getItem("Token"));
+
 	const [userData, setuserData] = useState({
 		medicalcondition: "",
 		contactmethod,
@@ -29,7 +31,15 @@ const Review = () => {
 
 	const SaveIt = () => {
 		event.preventDefault();
-		axios.post("https://react-form-2-l50h.onrender.com/form/review_info", data);
+		axios.post(
+			"https://react-form-2-l50h.onrender.com/form/review_info",
+			data,
+			{
+				headers: {
+					Authorization: Token,
+				},
+			}
+		);
 		console.log(data);
 	};
 
@@ -218,7 +228,7 @@ const Review = () => {
 												name="agreed"
 												onClick={() =>
 													agreed == "Yes"
-														? setAgreed("No")
+														? setAgreed("")
 														: setAgreed("Yes")
 												}
 											/>

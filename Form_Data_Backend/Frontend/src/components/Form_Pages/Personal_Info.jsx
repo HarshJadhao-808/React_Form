@@ -9,7 +9,7 @@ import axios from "axios";
 const Personal_Info = () => {
 	const [Gender, setGender] = useState("");
 	const [filled, setFilled] = useState(0);
-
+	const Token = JSON.parse(localStorage.getItem("Token"));
 	const [userData, setuserData] = useState({
 		prfimg: "",
 		name: "",
@@ -20,21 +20,27 @@ const Personal_Info = () => {
 		gender: Gender,
 	});
 
-
 	const data = {
-		UserData:userData,
+		UserData: userData,
 		PageName: "Personal_Info",
 	};
-
 
 	const Changes = (e) => {
 		setuserData({ ...userData, [e.target.name]: e.target.value });
 		// console.log(userData);
 	};
 
-	const SaveIt = async() => {
+	const SaveIt = async () => {
 		event.preventDefault();
-		// await axios.post("https://react-form-2-l50h.onrender.com/form/personal_info",data);
+		await axios.post(
+			"https://react-form-2-l50h.onrender.com/form/personal_info",
+			data,
+			{
+				headers: {
+					Authorization: Token,
+				},
+			}
+		);
 		console.log(data);
 	};
 

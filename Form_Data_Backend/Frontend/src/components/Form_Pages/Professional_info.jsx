@@ -10,6 +10,8 @@ const Professional_info = () => {
 	const [workstatus, setWorkstatus] = useState("");
 	const [check, setCheck] = useState([]);
 	const [filled, setFilled] = useState(0);
+	const Token = JSON.parse(localStorage.getItem("Token"))
+	// console.log(Token)
 
 	const [userData, setuserData] = useState({
 		workstatus,
@@ -51,7 +53,15 @@ const Professional_info = () => {
 
 	const SaveIt = () => {
 		event.preventDefault();
-			axios.post("https://react-form-2-l50h.onrender.com/form/professional_info",data);
+			axios.post(
+				"https://react-form-2-l50h.onrender.com/form/professional_info",
+				data,
+				{
+					headers: {
+						Authorization: Token,
+					},
+				}
+			);
 			console.log(data);
 	};
 

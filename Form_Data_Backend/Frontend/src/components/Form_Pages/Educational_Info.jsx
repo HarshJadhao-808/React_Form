@@ -8,6 +8,7 @@ import axios from "axios";
 const Educational_Info = () => {
 	const [PassingYear, setPassingYear] = useState("");
 	const [filled, setFilled] = useState(0);
+	const Token = JSON.parse(localStorage.getItem("Token"));
 	const [userData, setuserData] = useState({
 		qualification: "",
 		percentage: "",
@@ -15,6 +16,9 @@ const Educational_Info = () => {
 		currentcourse: "",
 		passingyear: PassingYear,
 	});
+	
+	const auth = `Bearer ${Token}`
+	console.log(auth)
 
 
 		const data = {
@@ -30,7 +34,15 @@ const Educational_Info = () => {
 
 	const SaveIt = () => {
 		event.preventDefault();
-			axios.post("https://react-form-2-l50h.onrender.com/form/educational_info",data);
+			axios.post(
+				"https://react-form-2-l50h.onrender.com/form/educational_info",
+				data,
+				{
+					headers: {
+						Authorization:Token,
+					},
+				}
+			);
 			console.log(data);
 	};
 
@@ -129,7 +141,7 @@ const Educational_Info = () => {
 								Percentage/CGPA:
 							</label>
 							<input
-								type="email"
+								type="text"
 								onChange={Changes}
 								name="percentage"
 								className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"

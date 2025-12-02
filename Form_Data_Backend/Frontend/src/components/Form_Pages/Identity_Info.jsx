@@ -8,6 +8,8 @@ import axios from "axios";
 const Identity_Info = () => {
 	const [PassingYear, setPassingYear] = useState("");
 	const [filled, setFilled] = useState(0);
+	const Token = JSON.parse(localStorage.getItem("Token"));
+
 	const [userData, setuserData] = useState({
 		address: "",
 		adhaarnum: "",
@@ -29,7 +31,15 @@ const Identity_Info = () => {
 
 	const SaveIt = () => {
 		event.preventDefault();
-		axios.post("https://react-form-2-l50h.onrender.com/form/identity_info",data);
+		axios.post(
+			"https://react-form-2-l50h.onrender.com/form/identity_info",
+			data,
+			{
+				headers: {
+					Authorization: Token,
+				},
+			}
+		);
 		console.log(data);
 	};
 

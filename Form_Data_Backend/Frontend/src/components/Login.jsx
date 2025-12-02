@@ -15,6 +15,7 @@ const Login = () => {
           try {
         const response = await axios.post("https://react-form-2-l50h.onrender.com/user/login", user);
         console.log("Signup Successfull", response.data)
+		localStorage.setItem("Token",JSON.stringify(response.data.token))
         Swal.fire({
 					text: "Login Successfull !",
 					icon: "success",
