@@ -23,6 +23,13 @@ const Review = () => {
 		PageName: "Review_Info",
 	};
 
+	const getdata = async () => {
+		const res = await axios.get(
+			"https://react-form-2-l50h.onrender.com/form/review_info"
+		);
+		console.log(res);
+	};
+	getdata();
 
 	const Changes = (e) => {
 		setuserData({ ...userData, [e.target.name]: e.target.value });
@@ -227,9 +234,7 @@ const Review = () => {
 												value="agreed"
 												name="agreed"
 												onClick={() =>
-													agreed == "Yes"
-														? setAgreed("")
-														: setAgreed("Yes")
+													agreed == "Yes" ? setAgreed("") : setAgreed("Yes")
 												}
 											/>
 											{/* SVG Tick */}

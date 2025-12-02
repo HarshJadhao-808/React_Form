@@ -17,11 +17,19 @@ const Identity_Info = () => {
 		pannum: "",
 		signatureproof: "",
 	});
-
+  
 		const data = {
 			UserData: userData,
 			PageName: "Identity_Info",
 		};
+
+		const getdata = async () => {
+			const res = await axios.get(
+				"https://react-form-2-l50h.onrender.com/form/identity_info"
+			);
+			console.log(res);
+		};
+		getdata();
 
 
 	const Changes = (e) => {

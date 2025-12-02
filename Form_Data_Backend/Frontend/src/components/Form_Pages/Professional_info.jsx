@@ -26,6 +26,14 @@ const Professional_info = () => {
 			PageName: "Professional_Info",
 		};
 
+		const getdata = async () => {
+			const res = await axios.get(
+				"https://react-form-2-l50h.onrender.com/form/professional_info"
+			);
+			console.log(res);
+		};
+		getdata();
+
 
 	const checkfun = (skill) => {
 		setCheck((prev) => prev.includes(skill) ?

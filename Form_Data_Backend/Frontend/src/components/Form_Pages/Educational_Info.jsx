@@ -16,6 +16,12 @@ const Educational_Info = () => {
 		currentcourse: "",
 		passingyear: PassingYear,
 	});
+
+	const getdata = async() =>{
+			 const res = await axios.get("https://react-form-2-l50h.onrender.com/form/educational_info");
+			 console.log(res)
+			}
+			getdata()
 	
 	const auth = `Bearer ${Token}`
 	console.log(auth)

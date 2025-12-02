@@ -4,8 +4,14 @@ import Form from "../models/FormData.js";
 
 // personal_info controller
 
-export const  personal_get = (req,res) => {
-    res.json({status:"working"})
+export const  personal_get = async(req,res) => {
+    const userid = req.user.id
+    const userexists = await Form.findOne({User:userid})
+
+    if(!userexists) res.json({message:"User not Found"})
+
+    res.json({UserData : userexists.Personal_Info})
+    // res.json({message:"working"})
 }
 
 export const personal_post = async(req,res) => {
@@ -30,6 +36,18 @@ export const personal_post = async(req,res) => {
     res.json({message:"data saved",data})
 }
 
+// Educational info
+
+
+export const educational_get = async (req, res) => {
+	const userid = req.user.id;
+	const userexists = await Form.findOne({ User: userid });
+
+	if (!userexists) res.json({ message: "User not Found" });
+
+	res.json({ UserData: userexists.Educational_Info });
+	// res.json({message:"working"})
+};
 
 export const educational_post = async(req,res) => {
     const {UserData,PageName} = req.body
@@ -51,6 +69,16 @@ export const educational_post = async(req,res) => {
 }
 
 // Professional info
+
+export const professional_get = async (req, res) => {
+	const userid = req.user.id;
+	const userexists = await Form.findOne({ User: userid });
+
+	if (!userexists) res.json({ message: "User not Found" });
+
+	res.json({ UserData: userexists.Professional_Info });
+	// res.json({message:"working"})
+};
 
 export const professional_post = async(req,res) => {
     const { UserData, PageName } = req.body;
@@ -76,6 +104,16 @@ export const professional_post = async(req,res) => {
 
 // identity info
 
+export const identity_get = async (req, res) => {
+	const userid = req.user.id;
+	const userexists = await Form.findOne({ User: userid });
+
+	if (!userexists) res.json({ message: "User not Found" });
+
+	res.json({ UserData: userexists.Identity_Info });
+	// res.json({message:"working"})
+};
+
 export const identity_post = async(req,res) => {
     const { UserData, PageName } = req.body;
     const userid = req.user.id
@@ -99,6 +137,16 @@ export const identity_post = async(req,res) => {
 }
 
 // Review info
+
+export const Review_get = async (req, res) => {
+	const userid = req.user.id;
+	const userexists = await Form.findOne({ User: userid });
+
+	if (!userexists) res.json({ message: "User not Found" });
+
+	res.json({ UserData: userexists.Review});
+	// res.json({message:"working"})
+};
 
 export const Review_post = async(req,res) => {
     const { UserData, PageName } = req.body;

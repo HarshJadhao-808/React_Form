@@ -9,7 +9,13 @@ import axios from "axios";
 const Personal_Info = () => {
 	const [Gender, setGender] = useState("");
 	const [filled, setFilled] = useState(0);
-	const Token = JSON.parse(localStorage.getItem("Token"));
+		const Token = JSON.parse(localStorage.getItem("Token"));
+
+		const getdata = async() =>{
+		 const res = await axios.get("https://react-form-2-l50h.onrender.com/form/personal_info");
+		 console.log(res)
+		}
+		getdata()
 	const [userData, setuserData] = useState({
 		prfimg: "",
 		name: "",
