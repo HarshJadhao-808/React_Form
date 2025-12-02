@@ -2,11 +2,11 @@ import mongoose from "mongoose";
 
 const FormSchema = new mongoose.Schema({
 	User: { type:String},
-	Personal_Info: { type: Array , default:[] },
-	Educational_Info: { type: Array , default:[] },
-	Professional_Info: { type: Array , default:[] },
-	Identity_Info: { type: Array , default:[] },
-	Review: { type: Array , default:[] },
+	Personal_Info: { type: Object , default:{} },
+	Educational_Info: { type: Object , default:{} },
+	Professional_Info: { type: Object , default:{} },
+	Identity_Info: { type: Object , default:{} },
+	Review: { type: Object , default:{} },
 	submitted: { type: Boolean, required: true, default: false },
 	lastsavedpage: { type: String, required: true },
 	updatedAt: { type: Date, default: Date.now, required: true }
