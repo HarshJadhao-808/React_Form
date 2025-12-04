@@ -33,10 +33,12 @@ const Review = () => {
 			}
 		);
 			const fetchedData = res.data.UserData;
+			setAgreed(fetchedData.agreed)
 			setuserData(fetchedData);
-	};
-	getdata();
-
+			setContactmethod(fetchedData.contactmethod)
+		};
+		getdata();
+		
 	const Changes = (e) => {
 		setuserData({ ...userData, [e.target.name]: e.target.value });
 		// console.log(userData);
@@ -138,6 +140,7 @@ const Review = () => {
 										type="text"
 										onChange={Changes}
 										name="medicalcondition"
+										value={userData.medicalcondition}
 										className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 									/>
 								</div>
@@ -237,8 +240,9 @@ const Review = () => {
 											<input
 												type="checkbox"
 												className=" peer appearance-none w-5 h-5 border-2 rounded-md checked:bg-blue-600 checked:border-blue-600 flex items-center justify-center"
-												value="agreed"
 												name="agreed"
+												value={userData.agreed}
+												checked={agreed === "Yes"}
 												onClick={() =>
 													agreed == "Yes" ? setAgreed("") : setAgreed("Yes")
 												}
@@ -273,6 +277,7 @@ const Review = () => {
 										type="text"
 										onChange={Changes}
 										name="finalcomments"
+										value={userData.finalcomments}
 										className="col-span-2 border border-[#193E6D] rounded-lg h-[40px] sm:h-[50px] px-4 text-[16px] sm:text-[20px] shadow-[0px_4px_4px_#00000040]"
 									/>
 								</div>

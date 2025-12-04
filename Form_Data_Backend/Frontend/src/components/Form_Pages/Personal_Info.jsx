@@ -9,6 +9,7 @@ import axios from "axios";
 const Personal_Info = () => {
 	const [Gender, setGender] = useState("");
 	const [filled, setFilled] = useState(0);
+
 		const Token = JSON.parse(localStorage.getItem("Token"));
 
 		const getdata = async() =>{
@@ -85,7 +86,7 @@ const Personal_Info = () => {
 	// console.log(Gender)
 	return (
 		<>
-			<div className="fixed z-3">
+			<div className=" fixed z-3">
 				<Form />
 			</div>
 			<div className="w-full top-0 sm:h-60 h-52 bg-white fixed z-1"></div>

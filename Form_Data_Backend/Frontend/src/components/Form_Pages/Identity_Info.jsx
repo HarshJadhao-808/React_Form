@@ -22,6 +22,7 @@ const Identity_Info = () => {
 			UserData: userData,
 			PageName: "Identity_Info",
 		};
+       
 
 		const getdata = async () => {
 			const res = await axios.get(
@@ -32,8 +33,12 @@ const Identity_Info = () => {
 					},
 				}
 			);
+			const substitute = (data) => {
+				setuserData(data)
+			}
 			const fetchedData = res.data.UserData;
-			setuserData(fetchedData);
+            (res.UserData) ? substitute(fetchedData) : ""
+
 		};
 		getdata();
 
