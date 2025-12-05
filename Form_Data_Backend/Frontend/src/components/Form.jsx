@@ -15,9 +15,7 @@ import Additional_info from "/src/assets/Additional_info.svg";
 
 const Form = () => {
   const [page,setPage] = useState(0)
-	
-
-     
+	 
   return (
 		<div>
 			<div className="fixed top-17 left-2 sm:top-28 sm:left-1  mt-3  h-20 border-2 border-[#386BAC] sm:mx-7 sm:h-25 w-[95%] sm:mt-7 flex justify-center items-center  overflow-x-auto sm:overflow-x-visible px-2 sm:px-0">

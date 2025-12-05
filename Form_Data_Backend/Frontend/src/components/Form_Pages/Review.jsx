@@ -32,10 +32,14 @@ const Review = () => {
 				}
 			}
 		);
-			const fetchedData = res.data.UserData;
-			setAgreed(fetchedData.agreed)
-			setuserData(fetchedData);
-			setContactmethod(fetchedData.contactmethod)
+		const fetchedData = res.data.UserData
+				const substitute = (data) => {
+			setAgreed(data.agreed)
+			setuserData(data);
+			setContactmethod(data.contactmethod)
+				}
+
+            (Object.keys(fetchedData).length === 0) ?  "" : substitute(fetchedData)
 		};
 		getdata();
 		
@@ -243,8 +247,8 @@ const Review = () => {
 												name="agreed"
 												value={userData.agreed}
 												checked={agreed === "Yes"}
-												onClick={() =>
-													agreed == "Yes" ? setAgreed("") : setAgreed("Yes")
+												onChange={() =>
+													setAgreed(agreed === "Yes" ? "" : "Yes")
 												}
 											/>
 											{/* SVG Tick */}

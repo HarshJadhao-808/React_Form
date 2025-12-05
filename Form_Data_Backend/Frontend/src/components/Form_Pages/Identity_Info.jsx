@@ -33,11 +33,12 @@ const Identity_Info = () => {
 					},
 				}
 			);
+			const fetchedData = res.data.UserData;
 			const substitute = (data) => {
 				setuserData(data)
 			}
-			const fetchedData = res.data.UserData;
-            (res.UserData) ? substitute(fetchedData) : ""
+			
+            (Object.keys(fetchedData).length === 0) ? "" : substitute(fetchedData) 
 
 		};
 		getdata();
@@ -45,7 +46,7 @@ const Identity_Info = () => {
 
 	const Changes = (e) => {
 		setuserData({ ...userData, [e.target.name]: e.target.value });
-		// console.log(userData);
+		console.log(userData);
 	};
 
 	const SaveIt = () => {

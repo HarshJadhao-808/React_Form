@@ -35,11 +35,18 @@ const Professional_info = () => {
 					},
 				}
 			);
-				const fetchedData = res.data.UserData;
-				setWorkstatus(fetchedData.workstatus)
-				setexperience(fetchedData.experience)
-				setCheck(fetchedData.skill)
-				setuserData(fetchedData);
+			const fetchedData = res.data.UserData
+
+				const substitute = (data) => {
+
+				setWorkstatus(data.workstatus)
+				setexperience(data.experience)
+				setCheck(data.check)
+				setuserData(data);
+			}
+			
+            (Object.keys(fetchedData).length === 0) ? "" : substitute(fetchedData)
+
 		};
 		getdata();
 
@@ -363,9 +370,8 @@ const Professional_info = () => {
 											className=" peer appearance-none w-5 h-5 border-2 rounded-md checked:bg-blue-600 checked:border-blue-600 flex items-center justify-center"
 											value="html"
 											name="html"
-											onClick={() =>
-												checkfun("html")
-											}
+											checked={check.includes("html")}
+											onClick={() => checkfun("html")}
 										/>
 										{/* SVG Tick */}
 										<svg
@@ -390,9 +396,8 @@ const Professional_info = () => {
 										<input
 											type="checkbox"
 											className="peer appearance-none w-5 h-5 border-2 rounded-md checked:bg-blue-600 checked:border-blue-600 flex items-center justify-center"
-											onClick={() =>
-												checkfun("css")
-											}
+											checked={check.includes("html")}
+											onClick={() => checkfun("css")}
 										/>
 										<svg
 											className="absolute w-3 h-3 text-white opacity-0 peer-checked:opacity-100 ml-1 pointer-events-none"
@@ -416,9 +421,8 @@ const Professional_info = () => {
 										<input
 											type="checkbox"
 											className="peer appearance-none w-5 h-5 border-2 rounded-md checked:bg-blue-600 checked:border-blue-600 flex items-center justify-center"
-											onClick={() =>
-												checkfun("js")
-											}
+											checked={check.includes("html")}
+											onClick={() => checkfun("js")}
 										/>
 										<svg
 											className="absolute w-3 h-3 text-white opacity-0 peer-checked:opacity-100 ml-1 pointer-events-none"
@@ -442,9 +446,8 @@ const Professional_info = () => {
 										<input
 											type="checkbox"
 											className="peer appearance-none w-5 h-5 border-2 rounded-md checked:bg-blue-600 checked:border-blue-600 flex items-center justify-center"
-											onClick={() =>
-												checkfun("react")
-											}
+											checked={check.includes("html")}
+											onClick={() => checkfun("react")}
 										/>
 										<svg
 											className="absolute w-3 h-3 text-white opacity-0 peer-checked:opacity-100 ml-1 pointer-events-none"
@@ -468,9 +471,8 @@ const Professional_info = () => {
 										<input
 											type="checkbox"
 											className="peer appearance-none w-5 h-5 border-2 rounded-md checked:bg-blue-600 checked:border-blue-600 flex items-center justify-center"
-											onClick={() =>
-												checkfun("nodejs")
-											}
+											checked={check.includes("html")}
+											onClick={() => checkfun("nodejs")}
 										/>
 										<svg
 											className="absolute w-3 h-3 text-white opacity-0 peer-checked:opacity-100 ml-1 pointer-events-none"
@@ -494,9 +496,8 @@ const Professional_info = () => {
 										<input
 											type="checkbox"
 											className="peer appearance-none w-5 h-5 border-2 rounded-md checked:bg-blue-600 checked:border-blue-600 flex items-center justify-center"
-											onClick={() =>
-												checkfun("others")
-											}
+											checked={check.includes("html")}
+											onClick={() => checkfun("others")}
 										/>
 										<svg
 											className="absolute w-3 h-3 text-white opacity-0 peer-checked:opacity-100 ml-1 pointer-events-none"

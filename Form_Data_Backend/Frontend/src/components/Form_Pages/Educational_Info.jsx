@@ -27,10 +27,13 @@ const Educational_Info = () => {
 					}
 					
 				);
-			const fetchedData = res.data.UserData;
-			setuserData(fetchedData);
-			// console.log(fetchedData)
-			setPassingYear(fetchedData.passingyear)
+				const fetchedData = res.data.UserData
+			
+				const substitute = (data) => {
+					setuserData(data)
+					setPassingYear(fetchedData.passingyear)
+				}
+            (Object.keys(fetchedData).length === 0) ? "" : substitute(fetchedData)		
 			}
 			getdata()
 	

@@ -21,10 +21,17 @@ const Personal_Info = () => {
 					},
 				}
 			);
-		const fetchedData = res.data.UserData
-		setuserData(fetchedData)
+			const fetchedData = res.data.UserData
 
-		setGender(fetchedData.gender)
+				const substitute = (data) => {
+					setuserData(data);
+					setGender(data.gender)
+				};
+
+            (Object.keys(fetchedData).length === 0) ? "" : substitute(fetchedData)
+
+				
+
 		}
 		getdata()
 	const [userData, setuserData] = useState({
